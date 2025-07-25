@@ -4,10 +4,11 @@
 :root {
   --background: #ffffff;
   --background-secondary: #d9d9d9;
-  --foreground: ##151515;
+  --foreground: #151515;
   --foreground-secondary: #999;
   --border: #9c9c9c;
   --page-px: 24px;
+  --page-py: 36px;
 }
 
 @theme inline {
@@ -15,6 +16,7 @@
   --color-background: var(--background);
   --color-background-secondary: var(--background-secondary);
   --color-foreground: var(--foreground);
+  --color-foreground-secondary: var(--foreground-secondary);
   --color-border: var(--border);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -37,30 +39,35 @@ body {
   padding-right: var(--page-px);
 }
 
+.pad-y-page {
+  padding-top: var(--page-py);
+  padding-bottom: var(--page-py);
+}
+
 .inverted {
   background-color: var(--foreground);
   color: var(--background);
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
   height: 8px;
-  background-color: transparent;
+  padding-left: 2px;
+  padding-right: 2px;
+  background-color: var(--foreground-secondary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(103, 103, 103, 0.82);
+  width: 8px;
+  background-color: var(--background);
   border-radius: 9999px;
+  border: 2px solid var(--foreground);
 }
 
 ::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-
-/* For Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(103, 103, 103, 0.82) transparent;
+  width: 8px;
+  background-color: var(--foreground);
+  border: 2px solid var(--foreground);
 }
 
 /* HTML: <div class="triangle"></div> */

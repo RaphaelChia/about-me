@@ -1,5 +1,11 @@
-const Logo = () => {
-  return <div>Raphael</div>;
+import Link from "next/link";
+
+const MobileLogo = () => {
+  return (
+    <Link href="/" className="font-semibold text-2xl font-sans">
+      ~/
+    </Link>
+  );
 };
 
-export default Logo;
+export default MobileLogo;

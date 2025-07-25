@@ -1,6 +1,5 @@
 "use client";
-import Logo from "@/components/logo";
-import useIsScrolled from "@/hooks/use-is-scrolled";
+import { default as Logo, default as MobileLogo } from "@/components/logo";
 import { cn } from "@/lib/utils";
 import { IconMenu2 } from "@tabler/icons-react";
 import Link from "next/link";
@@ -8,6 +7,7 @@ import { useCallback, useEffect, useState } from "react";
 
 export type NAVBAR_ITEM = {
   label: string;
+  labelSecondary: string;
   href: string;
   disabled?: boolean;
   disabledMessage?: string;
@@ -15,11 +15,17 @@ export type NAVBAR_ITEM = {
 
 export const NAVBAR_ITEMS: NAVBAR_ITEM[] = [
   {
-    label: "lab",
-    href: "/lab",
+    label: "projects",
+    labelSecondary: "projects",
+    href: "/projects",
     disabled: false,
   },
-  { label: "links", href: "/links", disabled: false },
+  {
+    label: "contact",
+    labelSecondary: "contact",
+    href: "/contact",
+    disabled: false,
+  },
 ];
 
 const MobileNavbar = () => {
@@ -51,12 +57,7 @@ const MobileNavbar = () => {
             isOpen ? "translate-y-0" : "-translate-y-full"
           )}
         >
-          <Link
-            href="/"
-            className="font-black text-2xl uppercase font-sans h-[60px] pad-x-page flex items-center"
-          >
-            <Logo />
-          </Link>
+          <MobileLogo />
           {NAVBAR_ITEMS.map((item) => (
             <div
               key={item.label}
@@ -85,26 +86,60 @@ const MobileNavbar = () => {
   );
 };
 
+const Dot = ({ color }: { color: string }) => {
+  return (
+    <div
+      style={{ backgroundColor: color }}
+      className={cn("size-3 rounded-full")}
+    />
+  );
+};
+
+const NavbarItem = ({
+  label,
+  href,
+}: React.ComponentProps<"button"> & NAVBAR_ITEM) => {
+  return (
+    <Link
+      href={href}
+      className="bg-foreground text-background flex min-w-[120px]"
+    >
+      <div className="cursor-pointer duration-300 transition-all hover:translate-x-1 hover:translate-y-1 size-full bg-background text-foreground flex items-center justify-center px-3 border border-transparent hover:border-foreground">
+        {label}
+      </div>
+    </Link>
+  );
+};
+
 const Navbar = () => {
-  const isScrolled = useIsScrolled();
   return (
     <div
       className={cn(
-        "h-[60px] flex items-center pad-x-page gap-8 font-sans sticky top-0 bg-background z-10 transition-all duration-300 border-b-[2px] border-transparent",
-        isScrolled && "bg-background/80 backdrop-blur-sm"
+        "h-[44px] shrink-0 flex items-center pad-x-page gap-8 font-sans sticky top-0 bg-background z-10 transition-all duration-300  border-[2px] border-foreground"
       )}
     >
-      <Link href="/" className="font-semibold text-2xl uppercase font-sans">
-        <Logo />
-      </Link>
-      <div className="flex-1 hidden md:flex justify-end uppercase font-semibold">
-        {NAVBAR_ITEMS.map((item) =>
-          item.disabled ? null : (
-            <Link href={item.href} key={item.label}>
-              {item.label}
-            </Link>
-          )
-        )}
+      <Logo />
+
+      <div className="flex-1 hidden md:flex justify-between lowercase  h-full items-center">
+        <div className="flex h-full divide-x-[2px] divide-foreground border-l-[2px] border-r-[2px]">
+          {NAVBAR_ITEMS.map((item) =>
+            item.disabled ? null : (
+              <NavbarItem
+                label={item.label}
+                labelSecondary={item.labelSecondary}
+                href={item.href}
+                key={item.label}
+                disabled={item.disabled}
+                disabledMessage={item.disabledMessage}
+              />
+            )
+          )}
+        </div>
+        <div className="flex gap-2">
+          <Dot color="#29C73F" />
+          <Dot color="#FEBC2C" />
+          <Dot color="#FF5F57" />
+        </div>
       </div>
       <MobileNavbar />
     </div>
