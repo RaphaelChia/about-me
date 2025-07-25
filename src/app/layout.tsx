@@ -22,9 +22,9 @@ export const metadata: Metadata = {
     description: "Bringing Ideas to Life.",
     images: [
       {
-        url: "/portrait.jpg", // Path to your OG image
+        url: "/portrait_og.jpeg", // Path to your OG image
         width: 1200,
-        height: 900,
+        height: 630,
         alt: "Raphael Chia Portfolio",
       },
     ],
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Raphael Chia - Portfolio",
     description: "Bringing Ideas to Life.",
-    images: ["/portrait.jpg"], // Same image for Twitter
+    images: ["/portrait_og.jpeg"], // Same image for Twitter
   },
 };
 
