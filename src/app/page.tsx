@@ -61,11 +61,12 @@ export default function Home() {
           <SentenceEmoji emoji="💼">fullstack engineer </SentenceEmoji>
           <div className="flex gap-4 mt-auto">
             <LinkButton href="/projects">projects</LinkButton>
-            <LinkButton href="/links">contact</LinkButton>
+            <LinkButton href="/contact">contact</LinkButton>
           </div>
         </div>
       </div>
       <div className="my-4"></div>
+      <Sentence>Hey. 👋</Sentence>
       <Sentence>Welcome to a tldr of my technical journey.</Sentence>
       <Sentence>
         It was 2018 when I enrolled into Singapore Institute of Technology to
@@ -79,7 +80,7 @@ export default function Home() {
       </Sentence>
       <Sentence>
         When I graduated, I served my scholarship&apos;s 3 year bond. Unsure
-        what to specialize in, I decided to go into DevOps role.{" "}
+        what to specialize in, I decided to go into DevOps.&nbsp;
         <TooltipText
           hoverContents={
             <div className="max-w-[220px]">
@@ -97,8 +98,10 @@ export default function Home() {
       </Sentence>
       <Sentence>
         After much consideration, a major decision was made to break my bond
-        (💸💸) and moved to yet another DevOps role, but this time, at a
-        startup.
+        <TooltipText hoverContents="The sum was 130% my school fees.">
+          <span>(💸💸)</span>
+        </TooltipText>{" "}
+        and moved to yet another DevOps role, but this time, at a startup.
       </Sentence>
       <Sentence>
         I loved it. I grew a lot, technically and holistically. Learnt how to
