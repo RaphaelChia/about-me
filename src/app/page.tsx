@@ -80,8 +80,15 @@ export default function Home() {
       <Sentence>
         When I graduated, I served my scholarship&apos;s 3 year bond. Unsure
         what to specialize in, I decided to go into DevOps role.{" "}
-        <TooltipText hoverContents="It was not.">
-          <span>It was fine.</span>
+        <TooltipText
+          hoverContents={
+            <div className="max-w-[220px]">
+              It was not. I was half doing pre-sale, half doing solution
+              architecting, and barely any devops.
+            </div>
+          }
+        >
+          <span className="border-b">It was fine.</span>
         </TooltipText>
       </Sentence>
       <Sentence>
@@ -90,7 +97,8 @@ export default function Home() {
       </Sentence>
       <Sentence>
         After much consideration, a major decision was made to break my bond
-        (💸💸) and throw myself into a startup.
+        (💸💸) and moved to yet another DevOps role, but this time, at a
+        startup.
       </Sentence>
       <Sentence>
         I loved it. I grew a lot, technically and holistically. Learnt how to
