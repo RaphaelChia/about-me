@@ -17,6 +17,25 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Raphael Chia - Portfolio",
   description: "Bringing Ideas to Life.",
+  openGraph: {
+    title: "Raphael Chia - Portfolio",
+    description: "Bringing Ideas to Life.",
+    images: [
+      {
+        url: "/portrait.jpg", // Path to your OG image
+        width: 1200,
+        height: 630,
+        alt: "Raphael Chia Portfolio",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Raphael Chia - Portfolio",
+    description: "Bringing Ideas to Life.",
+    images: ["/portrait.jpg"], // Same image for Twitter
+  },
 };
 
 export default function RootLayout({
