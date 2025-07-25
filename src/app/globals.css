@@ -1,26 +1,72 @@
 @import "tailwindcss";
+@plugin 'tailwindcss-animate';
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --background-secondary: #d9d9d9;
+  --foreground: ##151515;
+  --foreground-secondary: #999;
+  --border: #9c9c9c;
+  --page-px: 24px;
 }
 
 @theme inline {
+  --breakpoint-3xl: 2560px;
   --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
   --color-foreground: var(--foreground);
+  --color-border: var(--border);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --shadow-button: -6px 6px 0px 0px var(--border);
 }
-
+/* 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ededed;
+    --foreground: #0a0a0a;
   }
-}
+} */
 
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.pad-x-page {
+  padding-left: var(--page-px);
+  padding-right: var(--page-px);
+}
+
+.inverted {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(103, 103, 103, 0.82);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(103, 103, 103, 0.82) transparent;
+}
+
+/* HTML: <div class="triangle"></div> */
+.triangle {
+  width: 12px;
+  aspect-ratio: 1 / cos(30deg);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  background: black;
 }
