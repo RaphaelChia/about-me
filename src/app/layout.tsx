@@ -24,7 +24,7 @@ export const metadata: Metadata = {
       {
         url: "/portrait.jpg", // Path to your OG image
         width: 1200,
-        height: 630,
+        height: 900,
         alt: "Raphael Chia Portfolio",
       },
     ],
