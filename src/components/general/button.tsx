@@ -16,6 +16,7 @@ const buttonVariants = cva(
         border: "border border-border",
         borderHover:
           "border border-border hover:border-foreground hover:bg-foreground hover:text-background",
+        link: "underline cursor-pointer",
       },
       size: {
         default: "h-7 px-3 py-1.5 has-[>svg]:px-3",

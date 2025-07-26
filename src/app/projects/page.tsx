@@ -1,6 +1,7 @@
 import ShowcaseCard, { Project } from "@/app/projects/components/showcase-card";
 import { getMetaData } from "@/lib/utils";
 import { Metadata } from "next";
+import CanparkImage from "../../../public/showcase/canpark.png";
 
 const projects: Project[] = [
   {
@@ -13,6 +14,18 @@ const projects: Project[] = [
     lessons: "Lorem Ipsum Dolor Sit Amet",
     url: "https://canpark.vercel.com",
     github: "https://github.com/raphaelchia/canpark",
+    showcaseImage: [CanparkImage, CanparkImage],
+  },
+  {
+    projectHeader: "My Hello World.",
+    projectTitle: "canpark",
+    desc: "A parking lot booking system",
+    stack: "React, Next.js, html, css, mapbox",
+    builtYear: "2021",
+    challenges: "Creating a responsive UI, integrating 3rd party apis",
+    lessons: "Lorem Ipsum Dolor Sit Amet",
+    github: "https://github.com/raphaelchia/canpark",
+    showcaseImage: [CanparkImage, CanparkImage],
   },
 ];
 
@@ -32,6 +45,7 @@ const Page = () => {
             builtYear={p.builtYear}
             challenges={p.challenges}
             lessons={p.lessons}
+            showcaseImage={p.showcaseImage}
           />
         );
       })}
