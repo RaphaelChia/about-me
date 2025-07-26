@@ -66,7 +66,7 @@ export default function Home() {
         </div>
       </div>
       <div className="my-4"></div>
-      <Sentence>Hey. 👋</Sentence>
+      <Sentence>Hey 👋</Sentence>
       <Sentence>Welcome to a tldr of my technical journey.</Sentence>
       <Sentence>
         It was 2018 when I enrolled into Singapore Institute of Technology to
@@ -112,8 +112,8 @@ export default function Home() {
       </Sentence>
       <Sentence>
         With Telepathy Labs,{" "}
-        <em className="font-bold">
-          I started to make more decisions that has consequences
+        <em className="font-bold bg-background-secondary">
+          I began making more decisions that has consequences
         </em>
         , and here is where I believe I truly grew.
       </Sentence>
