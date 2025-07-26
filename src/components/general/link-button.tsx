@@ -6,17 +6,22 @@ import React from "react";
 interface LinkButtonProps extends React.ComponentProps<"div"> {
   href: string;
   external?: boolean;
+  underline?: boolean;
+  hideIconMobile?: boolean;
 }
 const LinkButton = ({
   href,
   children,
   className,
+  underline = true,
   external = false,
+  hideIconMobile = false,
 }: LinkButtonProps) => {
   return (
     <div
       className={cn(
-        "border-b flex gap-2 items-center cursor-pointer",
+        "flex gap-2 items-center cursor-pointer",
+        underline && "border-b",
         className
       )}
     >
@@ -35,9 +40,15 @@ const LinkButton = ({
         )}
       </Link>{" "}
       {external ? (
-        <IconExternalLink className="inline" size={16} />
+        <IconExternalLink
+          className={cn("inline", hideIconMobile && "max-md:hidden")}
+          size={16}
+        />
       ) : (
-        <IconLink className="inline" size={16} />
+        <IconLink
+          className={cn("inline", hideIconMobile && "max-md:hidden")}
+          size={16}
+        />
       )}
     </div>
   );
