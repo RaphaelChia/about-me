@@ -1,6 +1,6 @@
 "use client";
 import MobileLogo from "@/components/logo";
-import { NAVBAR_ITEMS } from "@/components/navbar";
+import { NAVBAR_ITEMS } from "@/components/navbar/navbar";
 import { cn } from "@/lib/utils";
 import { IconMenu2 } from "@tabler/icons-react";
 import Link from "next/link";

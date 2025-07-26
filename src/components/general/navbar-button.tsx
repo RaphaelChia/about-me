@@ -1,4 +1,4 @@
-import { NAVBAR_ITEM } from "@/components/navbar";
+import { NAVBAR_ITEM } from "@/components/navbar/navbar";
 
 interface NavbarButtonProps {
   navbarItem: NAVBAR_ITEM;
