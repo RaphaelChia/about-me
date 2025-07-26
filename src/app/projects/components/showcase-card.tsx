@@ -110,7 +110,7 @@ const ShowcaseCard = ({
       {...props}
     >
       <div className="flex text-base shrink-0 divide-x">
-        <div className="grow pad-x-page py-1 h-[34px] ">
+        <div className="grow pad-x-page py-1 h-[34px] truncate">
           &gt; {projectHeader}
         </div>
         <div className="w-4/12 shrink-0 text-base  pad-x-page text-end flex items-center justify-end gap-4 h-[34px]">
@@ -145,7 +145,7 @@ const ShowcaseCard = ({
         </div>
       </div>
       <div className="flex md:flex-row flex-col">
-        <div className="grow pad-x-page py-[22px] flex flex-col text-sm">
+        <div className="grow pad-x-page py-[22px] flex flex-col text-sm gap-3">
           <div className="flex">
             <div className="w-[120px] shrink-0">title:</div>
             <div className="grow">{projectTitle}</div>
