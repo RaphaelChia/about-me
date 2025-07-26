@@ -26,6 +26,8 @@ export interface Project extends React.ComponentProps<"div"> {
   url?: string;
   github?: string;
   showcaseImage?: imageSrc[];
+  projectRole: React.ReactNode;
+  highlights: React.ReactNode;
 }
 
 type ShowcaseImage = {
@@ -62,7 +64,7 @@ const MobileShowcaseImage = (props: ShowcaseImage) => {
           alt={props.alt}
           width={1200}
           height={200}
-          className="size-full object-cover object-left border-[1px] border-foreground"
+          className="size-full object-cover object-left border-[1px] border-foreground rounded-xl"
         />
       )}
     </div>
@@ -71,13 +73,13 @@ const MobileShowcaseImage = (props: ShowcaseImage) => {
 
 const ShowcaseImage = (props: ShowcaseImage) => {
   return (
-    <div className="max-md:hidden w-full md:w-4/12 shrink-0 max-md:p-6">
+    <div className="max-md:hidden w-full md:w-4/12 shrink-0 p-6 ">
       <Image
         src={props.src}
         alt={props.alt}
         width={1200}
         height={200}
-        className="size-full object-cover object-left"
+        className="size-full object-cover object-left border-[1px] border-foreground rounded-xl"
       />
     </div>
   );
@@ -95,6 +97,8 @@ const ShowcaseCard = ({
   url,
   github,
   showcaseImage,
+  projectRole,
+  highlights,
   ...props
 }: Project) => {
   return (
@@ -105,8 +109,8 @@ const ShowcaseCard = ({
       )}
       {...props}
     >
-      <div className="flex  text-base shrink-0 divide-x">
-        <div className="grow pad-x-page py-1 h-[34px]">
+      <div className="flex text-base shrink-0 divide-x">
+        <div className="grow pad-x-page py-1 h-[34px] ">
           &gt; {projectHeader}
         </div>
         <div className="w-4/12 shrink-0 text-base  pad-x-page text-end flex items-center justify-end gap-4 h-[34px]">
@@ -140,31 +144,52 @@ const ShowcaseCard = ({
           )}
         </div>
       </div>
-      <div className="flex md:divide-x md:flex-row flex-col">
+      <div className="flex md:flex-row flex-col">
         <div className="grow pad-x-page py-[22px] flex flex-col text-sm">
           <div className="flex">
-            <div className="w-[140px] shrink-0">title:</div>
+            <div className="w-[120px] shrink-0">title:</div>
             <div className="grow">{projectTitle}</div>
           </div>
           <div className="flex">
-            <div className="w-[140px] shrink-0">description:</div>
+            <div className="w-[120px] shrink-0">description:</div>
             <div className="grow">{desc}</div>
           </div>
           <div className="flex">
-            <div className="w-[140px] shrink-0">stack:</div>
+            <div className="w-[120px] shrink-0">stack:</div>
             <div className="grow">{stack}</div>
           </div>
           <div className="flex">
-            <div className="w-[140px] shrink-0">built: year</div>
+            <div className="w-[120px] shrink-0">role:</div>
+            <div className="grow">{projectRole}</div>
+          </div>
+          <div className="flex">
+            <div className="w-[120px] shrink-0">highlights:</div>
+            <div className="grow">{highlights}</div>
+          </div>
+          <div className="flex">
+            <div className="w-[120px] shrink-0">built year:</div>
             <div className="grow">{builtYear}</div>
           </div>
           <div className="flex">
-            <div className="w-[140px] shrink-0">challenges:</div>
+            <div className="w-[120px] shrink-0">challenges:</div>
             <div className="grow">{challenges}</div>
           </div>
           <div className="flex">
-            <div className="w-[140px] shrink-0">lessons:</div>
+            <div className="w-[120px] shrink-0">lessons:</div>
             <div className="grow">{lessons}</div>
+          </div>
+          <div className="flex">
+            <div className="w-[120px] shrink-0">Status:</div>
+            <div className="grow">
+              {url ? (
+                <div className="flex items-center gap-2">
+                  deployed{" "}
+                  <div className="translate-y-0.5 size-2 rounded-full bg-green-500 animate-pulse"></div>
+                </div>
+              ) : (
+                "preview only"
+              )}
+            </div>
           </div>
         </div>
         {showcaseImage ? (
