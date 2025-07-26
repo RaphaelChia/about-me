@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Raphael Chia - Portfolio",
+  title: "Raphael Chia",
   description: "Bringing Ideas to Life.",
   openGraph: {
     title: "Raphael Chia - Portfolio",

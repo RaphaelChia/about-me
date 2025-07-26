@@ -35,42 +35,9 @@ export const getAbbreviatedDate = (date: Date) => {
   return `${retValue} ${suffix}`;
 };
 
-export const generateCSP = () => {
-  const policy = process.env.NEXT_PUBLIC_BACKEND_URL?.includes("localhost")
-    ? ""
-    : {
-        "default-src": ["https://raw.githubusercontent.com"],
-        "script-src": [
-          "'self'",
-          "'unsafe-eval'",
-          "'unsafe-inline'",
-          "https://cdnjs.cloudflare.com",
-          "https://cdn.jsdelivr.net",
-          "https://unpkg.com",
-          "https://*.googletagmanager.com",
-        ], // nonce to be implemented
-        "style-src": ["'self'", "'unsafe-inline'"], // nonce to be implemented
-        "img-src": ["'self'", "data:", "https:"],
-        "font-src": ["'self'"],
-        "frame-src": ["blob: data:", "'self'"],
-        "connect-src": [
-          "'self'",
-          "https://*.google-analytics.com",
-          "https://raw.githubusercontent.com",
-          process.env.NEXT_PUBLIC_API_URL,
-          "http://3.1.35.240",
-        ],
-        "worker-src": ["'self'", "blob:"],
-        "media-src": ["'self'", "blob: data:"],
-        "object-src": ["'self'"],
-        "child-src": ["'none'"],
-        "form-action": ["'self'"],
-        "base-uri": ["'self'"],
-        "manifest-src": ["'self'"],
-        "block-all-mixed-content": [],
-      };
-
-  return Object.entries(policy)
-    .map(([key, values]) => `${key} ${values.join(" ")}`)
-    .join("; ");
+export const getMetaData = (title: string, description: string) => {
+  return {
+    title: `Raphael | ${title}`,
+    description,
+  };
 };

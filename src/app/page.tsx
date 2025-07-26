@@ -53,7 +53,7 @@ export default function Home() {
               <div className="text-6xl tracking-widest p-4">谢松佐</div>
             }
           >
-            <span className="font-bold text-6xl ">Raphael Chia</span>
+            <div className="font-bold text-6xl ">Raphael Chia</div>
           </TooltipText>
           <SentenceEmoji emoji="⏳">29 y.o </SentenceEmoji>
           <SentenceEmoji emoji="🇸🇬">singaporean</SentenceEmoji>
@@ -82,6 +82,8 @@ export default function Home() {
         When I graduated, I served my scholarship&apos;s 3 year bond. Unsure
         what to specialize in, I decided to go into DevOps.&nbsp;
         <TooltipText
+          underline
+          underlinePattern="dotted"
           hoverContents={
             <div className="max-w-[220px]">
               It was not. I was half doing pre-sale, half doing solution
@@ -89,7 +91,7 @@ export default function Home() {
             </div>
           }
         >
-          <span className="border-b">It was fine.</span>
+          <div className=" inline-flex">It was fine.</div>
         </TooltipText>
       </Sentence>
       <Sentence>
@@ -97,8 +99,9 @@ export default function Home() {
         click. I thought it was the organization&apos;s comfortable pace.
       </Sentence>
       <Sentence>
-        After much consideration, a major decision was made to break my bond
-        <TooltipText hoverContents="The sum was 130% my school fees.">
+        After much consideration, a major decision was made to terminate my bond
+        early
+        <TooltipText hoverContents="The sum was 130% my school fees :(">
           <span>(💸💸)</span>
         </TooltipText>{" "}
         and moved to yet another DevOps role, but this time, at a startup.
@@ -145,9 +148,19 @@ export default function Home() {
       <Sentence>
         Until today, i&apos;m still as hungry as ever for new challenges, to
         gain more experience, build more solutions, maybe even start shipping my
-        own Saas. Who knows?
+        own Saas. Who knows? We&apos;ll see.
       </Sentence>
-      <Sentence>We&apos;ll see.</Sentence>
+      <Sentence>
+        Drop me a message on{" "}
+        <LinkButton
+          external
+          className="inline-flex"
+          href="https://www.linkedin.com/in/raphaelchia"
+        >
+          <div className="flex items-center gap-1">linkedin</div>
+        </LinkButton>{" "}
+        to connect!
+      </Sentence>
       <div className="text-xs text-end mt-12">last updated 27 july 2025</div>
     </main>
   );

@@ -63,13 +63,24 @@ const TooltipText = ({
   children,
   hoverContents,
   side = "top",
+  underline,
+  underlinePattern,
 }: React.ComponentProps<typeof TooltipContent> & {
   hoverContents: React.ReactNode;
   side?: "top" | "bottom" | "left" | "right";
+  underline?: boolean;
+  underlinePattern?: "solid" | "dashed" | "dotted";
 }) => {
   return (
     <Tooltip>
-      <TooltipTrigger className="" asChild>
+      <TooltipTrigger
+        className={cn(
+          underline && "md:underline",
+          underlinePattern === "dotted" && "decoration-dotted",
+          underlinePattern === "dashed" && "decoration-dashed"
+        )}
+        asChild
+      >
         {children}
       </TooltipTrigger>
       <TooltipContent side={side}>{hoverContents}</TooltipContent>
