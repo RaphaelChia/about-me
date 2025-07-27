@@ -113,9 +113,9 @@ export default function Home() {
       <Sentence>
         With Telepathy Labs,{" "}
         <em className="font-bold ">
-          I began making more decisions that has consequences
+          I began making more decisions that came with consequences
         </em>
-        , and here is where I believe I truly grew.
+        . This is where true growth happened for me.
       </Sentence>
       <Sentence>
         It was great, except something still did not click. I started to
