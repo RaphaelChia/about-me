@@ -5,12 +5,12 @@ import useScreenWidth from "@/hooks/useScreenWidth";
 import { createLoadingPlaceholder } from "@/lib/image-utils";
 import { cn } from "@/lib/utils";
 import {
-    IconBrandGithub,
-    IconChevronDown,
-    IconChevronLeft,
-    IconChevronRight,
-    IconChevronUp,
-    IconWorld,
+  IconBrandGithub,
+  IconChevronDown,
+  IconChevronLeft,
+  IconChevronRight,
+  IconChevronUp,
+  IconWorld,
 } from "@tabler/icons-react";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
@@ -51,10 +51,10 @@ const ShowcaseImage = (props: { src: imageSrc[]; alt: string }) => {
       <div className="relative font-mono overflow-hidden rounded-xl cursor-pointer text-background text-2xl">
         {props.src.length > 1 && (
           <>
-            <div className="lg:hidden absolute left-2 top-1/2 -translate-y-1/2">
+            <div className="lg:hidden absolute left-2 top-1/2 -translate-y-1/2 bg-foreground/20">
               <IconChevronLeft strokeWidth={3} />
             </div>
-            <div className="lg:hidden absolute right-2 top-1/2 -translate-y-1/2">
+            <div className="lg:hidden absolute right-2 top-1/2 -translate-y-1/2 bg-foreground/20">
               <IconChevronRight strokeWidth={3} />
             </div>
             <div
