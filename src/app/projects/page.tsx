@@ -54,7 +54,8 @@ const projects: Project[] = [
     projectRole: "Sole developer",
     challenges:
       "Integrating with third party APIs and handling the complexity of a 50+ question survey with 200+ different options and conditional form",
-    lessons: "Just start coding, you'll figure it out",
+    lessons:
+      "Sometimes at the mercy of 3rd party apis, your code is forced to look ugly, and that's ok.",
     highlights: "my mom loved it <3",
     url: "https://kit.hapigenes.com",
     github: "https://github.com/raphaelchia/hapigenes",
