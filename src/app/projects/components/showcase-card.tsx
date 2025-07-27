@@ -6,6 +6,8 @@ import { cn } from "@/lib/utils";
 import {
   IconBrandGithub,
   IconChevronDown,
+  IconChevronLeft,
+  IconChevronRight,
   IconChevronUp,
   IconWorld,
 } from "@tabler/icons-react";
@@ -41,23 +43,23 @@ const ShowcaseImage = (props: { src: imageSrc[]; alt: string }) => {
   const [currentImageIdx, setCurrentImageIdx] = useState(0);
   return (
     <div className="relative ">
-      <div className="relative font-mono overflow-hidden rounded-xl cursor-pointer text-background">
+      <div className="relative font-mono overflow-hidden rounded-xl cursor-pointer text-background text-2xl">
         {props.src.length > 1 && (
           <>
             <div
               className={cn(
-                "opacity-0 hover:opacity-100 absolute left-0 top-0 w-3/12 h-full bg-foreground/60 flex items-center justify-center",
+                "opacity-0 hover:opacity-100 absolute left-0 top-0 w-3/12 h-full bg-foreground/60 flex items-center justify-center  max-lg:hover:opacity-0",
                 currentImageIdx == 0 && "hidden"
               )}
               onClick={() =>
                 setCurrentImageIdx((prev) => (prev > 0 ? prev - 1 : prev))
               }
             >
-              &lt;
+              <IconChevronLeft />
             </div>
             <div
               className={cn(
-                "opacity-0 hover:opacity-100 absolute right-0 top-0 w-3/12 h-full bg-foreground/60 flex items-center justify-center",
+                "opacity-0 hover:opacity-100 absolute right-0 top-0 w-3/12 h-full bg-foreground/60 flex items-center justify-center  max-lg:hover:opacity-0",
                 currentImageIdx == props.src.length - 1 && "hidden"
               )}
               onClick={() =>
@@ -66,7 +68,13 @@ const ShowcaseImage = (props: { src: imageSrc[]; alt: string }) => {
                 )
               }
             >
-              &gt;
+              <IconChevronRight />
+            </div>
+            <div className="lg:hidden absolute left-2 top-1/2 -translate-y-1/2">
+              <IconChevronLeft strokeWidth={3} />
+            </div>
+            <div className="lg:hidden absolute right-2 top-1/2 -translate-y-1/2">
+              <IconChevronRight strokeWidth={3} />
             </div>
           </>
         )}
