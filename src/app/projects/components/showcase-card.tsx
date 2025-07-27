@@ -46,6 +46,12 @@ const ShowcaseImage = (props: { src: imageSrc[]; alt: string }) => {
       <div className="relative font-mono overflow-hidden rounded-xl cursor-pointer text-background text-2xl">
         {props.src.length > 1 && (
           <>
+            <div className="lg:hidden absolute left-2 top-1/2 -translate-y-1/2">
+              <IconChevronLeft strokeWidth={3} />
+            </div>
+            <div className="lg:hidden absolute right-2 top-1/2 -translate-y-1/2">
+              <IconChevronRight strokeWidth={3} />
+            </div>
             <div
               className={cn(
                 "opacity-0 hover:opacity-100 absolute left-0 top-0 w-3/12 h-full bg-foreground/60 flex items-center justify-center  max-lg:hover:opacity-0",
@@ -69,12 +75,6 @@ const ShowcaseImage = (props: { src: imageSrc[]; alt: string }) => {
               }
             >
               <IconChevronRight />
-            </div>
-            <div className="lg:hidden absolute left-2 top-1/2 -translate-y-1/2">
-              <IconChevronLeft strokeWidth={3} />
-            </div>
-            <div className="lg:hidden absolute right-2 top-1/2 -translate-y-1/2">
-              <IconChevronRight strokeWidth={3} />
             </div>
           </>
         )}
