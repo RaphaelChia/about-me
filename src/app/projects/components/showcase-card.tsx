@@ -78,7 +78,7 @@ const ShowcaseImage = (props: { src: imageSrc[]; alt: string }) => {
           className="size-full lg:max-h-[300px] object-cover object-top-left border-[1px] border-foreground rounded-xl aspect-video"
         />
       </div>
-      <div className="max-lg:hidden absolute left-[-20px] top-[50%] -translate-y-1/2 flex flex-col gap-1 cursor-pointer">
+      <div className=" absolute lg:left-[-20px] lg:top-[50%] lg:-translate-y-1/2 flex lg:flex-col gap-1 cursor-pointer flex-row bottom-2 left-1/2 -translate-x-1/2 size-fit">
         {props.src.map((s, i) => {
           return (
             <div
