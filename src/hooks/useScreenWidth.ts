@@ -18,7 +18,7 @@ const useScreenWidth = () => {
     };
   }, []);
 
-  return { width, isMobile: width < 768 };
+  return { width, isMobile: width < 1024 };
 };
 
 export default useScreenWidth;

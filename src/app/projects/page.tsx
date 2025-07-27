@@ -1,9 +1,7 @@
 import ShowcaseCard, { Project } from "@/app/projects/components/showcase-card";
+import { backpropImages, canparkImages, stakeTplxImages } from "@/lib/images";
 import { getMetaData } from "@/lib/utils";
 import { Metadata } from "next";
-import BackpropImage from "../../../public/showcase/backprop.png";
-import CanparkImage from "../../../public/showcase/canpark.png";
-import StakeTplx from "../../../public/showcase/stake.tplx.png";
 
 const projects: Project[] = [
   {
@@ -18,7 +16,7 @@ const projects: Project[] = [
     github: "https://github.com/raphaelchia/canpark",
     projectRole: "Sole Developer",
     highlights: "carpark search by map area",
-    showcaseImage: [CanparkImage, CanparkImage],
+    showcaseImage: canparkImages,
   },
   {
     projectHeader: "reskinning a staking dApp.",
@@ -35,7 +33,7 @@ const projects: Project[] = [
     projectRole:
       "frontend engineer, reskin, bridging interface, points program and leaderboard feature",
     highlights: "1100+ unique wallet users took part in referral program",
-    showcaseImage: [StakeTplx, StakeTplx],
+    showcaseImage: stakeTplxImages,
   },
   {
     projectHeader: "building a trading terminal",
@@ -52,7 +50,7 @@ const projects: Project[] = [
       "frontend engineer, trading interface, charts, wallet connection and authentication, transaction signing and watchlists",
     url: "https://backprop.finance",
     highlights: "Average USD$3-19mil daily trading volume",
-    showcaseImage: [BackpropImage, BackpropImage],
+    showcaseImage: backpropImages,
   },
 ];
 

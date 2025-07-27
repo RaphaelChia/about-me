@@ -33,17 +33,77 @@ export interface Project extends React.ComponentProps<"div"> {
 type ShowcaseImage = {
   href: string;
   className: string;
-  src: imageSrc;
+  src: imageSrc[];
   alt: string;
 };
+
+const ShowcaseImage = (props: { src: imageSrc[]; alt: string }) => {
+  const [currentImageIdx, setCurrentImageIdx] = useState(0);
+  return (
+    <div className="relative ">
+      <div className="relative font-mono overflow-hidden rounded-xl cursor-pointer text-background">
+        {props.src.length > 1 && (
+          <>
+            <div
+              className={cn(
+                "opacity-0 hover:opacity-100 absolute left-0 top-0 w-3/12 h-full bg-foreground/60 flex items-center justify-center",
+                currentImageIdx == 0 && "hidden"
+              )}
+              onClick={() =>
+                setCurrentImageIdx((prev) => (prev > 0 ? prev - 1 : prev))
+              }
+            >
+              &lt;
+            </div>
+            <div
+              className={cn(
+                "opacity-0 hover:opacity-100 absolute right-0 top-0 w-3/12 h-full bg-foreground/60 flex items-center justify-center",
+                currentImageIdx == props.src.length - 1 && "hidden"
+              )}
+              onClick={() =>
+                setCurrentImageIdx((prev) =>
+                  prev < props.src.length - 1 ? prev + 1 : prev
+                )
+              }
+            >
+              &gt;
+            </div>
+          </>
+        )}
+        <Image
+          src={props.src[currentImageIdx]}
+          alt={props.alt}
+          width={1200}
+          height={1200}
+          className="size-full lg:max-h-[300px] object-cover object-top-left border-[1px] border-foreground rounded-xl aspect-video"
+        />
+      </div>
+      <div className="max-lg:hidden absolute left-[-20px] top-[50%] -translate-y-1/2 flex flex-col gap-1 cursor-pointer">
+        {props.src.map((s, i) => {
+          return (
+            <div
+              key={i}
+              onClick={() => setCurrentImageIdx(i)}
+              className={cn(
+                "size-3 rounded-full border transition-colors duration-300",
+                currentImageIdx == i ? "bg-foreground" : "bg-background"
+              )}
+            ></div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
 const MobileShowcaseImage = (props: ShowcaseImage) => {
-  const [showPreview, setShowPreview] = useState<boolean>(false);
+  const [showPreview, setShowPreview] = useState<boolean>(true);
   const { isMobile } = useScreenWidth();
   if (!isMobile) return null;
   return (
     <div
       className={cn(
-        "md:hidden w-full md:w-4/12 shrink-0 px-6 pb-6 flex flex-col justify-center",
+        " w-full lg:w-5/12 shrink-0 px-6 pb-6 flex flex-col justify-center",
         props.className
       )}
     >
@@ -58,29 +118,15 @@ const MobileShowcaseImage = (props: ShowcaseImage) => {
           </div>
         )}
       </Button>
-      {showPreview && (
-        <Image
-          src={props.src}
-          alt={props.alt}
-          width={1200}
-          height={200}
-          className="size-full object-cover object-left border-[1px] border-foreground rounded-xl"
-        />
-      )}
+      {showPreview && <ShowcaseImage src={props.src} alt={props.alt} />}
     </div>
   );
 };
 
-const ShowcaseImage = (props: ShowcaseImage) => {
+const DesktopShowcaseImage = (props: ShowcaseImage) => {
   return (
-    <div className="max-md:hidden w-full md:w-4/12 shrink-0 p-6 ">
-      <Image
-        src={props.src}
-        alt={props.alt}
-        width={1200}
-        height={200}
-        className="size-full object-cover object-left border-[1px] border-foreground rounded-xl"
-      />
+    <div className="max-lg:hidden w-full md:w-5/12 shrink-0 p-6 ">
+      <ShowcaseImage src={props.src} alt={props.alt} />
     </div>
   );
 };
@@ -103,17 +149,14 @@ const ShowcaseCard = ({
 }: Project) => {
   return (
     <div
-      className={cn(
-        "flex flex-col divide-y border-b font-mono lowercase",
-        className
-      )}
+      className={cn("flex flex-col  border-b font-mono lowercase ", className)}
       {...props}
     >
-      <div className="flex text-base shrink-0 divide-x">
-        <div className="grow pad-x-page py-1 h-[34px] truncate">
+      <div className="flex text-base shrink-0 mt-4">
+        <div className="grow pad-x-page py-1 h-[34px] truncate font-bold">
           &gt; {projectHeader}
         </div>
-        <div className="w-4/12 shrink-0 text-base  pad-x-page text-end flex items-center justify-end gap-4 h-[34px]">
+        <div className="w-fit shrink-0 text-base pad-x-page text-end flex items-center justify-end gap-4 h-[34px]">
           {url && (
             <LinkButton
               hideIconMobile={true}
@@ -144,7 +187,7 @@ const ShowcaseCard = ({
           )}
         </div>
       </div>
-      <div className="flex md:flex-row flex-col">
+      <div className="flex lg:flex-row flex-col">
         <div className="grow pad-x-page py-[22px] flex flex-col text-sm gap-3">
           <div className="flex">
             <div className="w-[120px] shrink-0">title:</div>
@@ -194,17 +237,17 @@ const ShowcaseCard = ({
         </div>
         {showcaseImage ? (
           <>
-            <ShowcaseImage
+            <DesktopShowcaseImage
               href={url ?? ""}
               className={cn("max-md:hidden")}
-              src={showcaseImage[0]}
+              src={showcaseImage}
               alt={"preview"}
             />
 
             <MobileShowcaseImage
               href={url ?? ""}
               className={cn("")}
-              src={showcaseImage[0]}
+              src={showcaseImage}
               alt={"preview"}
             />
           </>
