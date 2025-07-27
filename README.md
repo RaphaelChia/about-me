@@ -14,7 +14,7 @@
 
 ## 👨‍💻 About Me
 
-**Raphael Chia** is a passionate Fullstack Engineer based in Singapore, specializing in React, Next.js, and modern web technologies. With a strong foundation in software engineering and a proven track record of building impactful applications, I thrive on turning complex ideas into elegant, user-friendly solutions.
+I am a passionate Fullstack Engineer based in Singapore, experienced in React, Next.js, and modern web technologies. With a strong foundation in software engineering and a proven track record of building impactful applications, I thrive on turning complex ideas into elegant, user-friendly solutions.
 
 ### 🎯 What I Do
 
@@ -29,7 +29,7 @@
 
 ### 1. **Backprop Finance** - Trading Terminal
 
-> _A sophisticated trading terminal for the Bittensor ecosystem_
+> _A user friendly trading terminal for the Bittensor ecosystem_
 
 - **🔗 Live Site:** [backprop.finance](https://backprop.finance)
 - **💰 Impact:** $3-19M daily trading volume
@@ -39,7 +39,6 @@
   - Advanced trading interface with real-time charts
   - Multi-wallet authentication and transaction signing
   - Portfolio management and watchlists
-  - Complex trading logic with clean React architecture
 
 ### 2. **Tensorplex Stake** - DeFi Staking Platform
 
@@ -57,7 +56,7 @@
 
 ### 3. **CanPark** - Singapore Parking Finder
 
-> _My "Hello World" project - a comprehensive parking solution_
+> _My "Hello World" project - a singapore based parking solution_
 
 - **🔗 Live Site:** [canpark.vercel.com](https://canpark.vercel.com)
 - **🛠️ Tech Stack:** React, Next.js, Mapbox API
@@ -102,12 +101,15 @@
 
 ### **Previous Experience**
 
-- **Telepathy Labs** - DevOps Engineer (Startup environment)
+- **Telepathy Labs**
+  - DevOps Engineer
   - Learned fast-paced development and team collaboration
   - Gained independence and responsibility in technical decisions
-- **Singapore Institute of Technology** - Software Engineering Degree
+- **NCS**
+  - Software Engineer
   - Company-sponsored scholarship recipient
   - Hands-on experience with full software development lifecycle
+  - Low code and internal app feature ownership
 
 ---
 
@@ -116,19 +118,17 @@
 ### **Technical Excellence**
 
 - **Clean Architecture:** Proven ability to build maintainable, scalable applications
-- **Performance Focus:** Optimized applications handling millions in daily volume
-- **Modern Stack:** Expertise in cutting-edge technologies and best practices
+- **Performance Focus:** Optimized bundle size, time to first paint
+- **Modern Stack:** Always keeping up to date with new technologies and not afraid to get my hands dirty on them
 
 ### **Product Mindset**
 
 - **End-to-End Ownership:** From concept to deployment and maintenance
 - **User-Centric Design:** Creating intuitive interfaces for complex financial applications
-- **Business Impact:** Built applications generating significant trading volume
 
 ### **Growth Mindset**
 
-- **Continuous Learning:** Always exploring new technologies and methodologies
-- **Adaptability:** Successfully transitioned from DevOps to Fullstack development
+- **Continuous Learning:** Learning new technologies and staying up to date with best practices, and re-learning during big technological shifts
 - **Passion-Driven:** Genuine enthusiasm for coding and bringing ideas to life
 
 ---
