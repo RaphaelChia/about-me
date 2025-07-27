@@ -1,7 +1,7 @@
 # Raphael Chia - Fullstack Engineer Portfolio
 
 <div align="center">
-  <img src="public/portrait.jpg" alt="Raphael Chia" width="200" height="200" style="border-radius: 50%; border: 2px solid #000;"/>
+  <img src="public/rcsz.jpg" alt="Raphael Chia" style="border-radius: 50%; border: 2px solid #000;"/>
   
   ### 🚀 Bringing Ideas to Life
   
