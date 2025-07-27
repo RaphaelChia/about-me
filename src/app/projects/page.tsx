@@ -58,7 +58,6 @@ const projects: Project[] = [
       "Sometimes at the mercy of 3rd party apis, your code is forced to look ugly, and that's ok.",
     highlights: "my mom loved it <3",
     url: "https://kit.hapigenes.com",
-    github: "https://github.com/raphaelchia/hapigenes",
     showcaseImage: hapigenesImages,
   },
   {
