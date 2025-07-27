@@ -112,7 +112,7 @@ export default function Home() {
       </Sentence>
       <Sentence>
         With Telepathy Labs,{" "}
-        <em className="font-bold bg-background-secondary">
+        <em className="font-bold ">
           I began making more decisions that has consequences
         </em>
         , and here is where I believe I truly grew.
