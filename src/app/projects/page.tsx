@@ -5,18 +5,22 @@ import { Metadata } from "next";
 
 const projects: Project[] = [
   {
-    projectHeader: "My Hello World.",
-    projectTitle: "canpark",
-    desc: "Search for parking lots, anywhere in singapore",
-    stack: "React, Next.js, html, css, mapbox",
-    builtYear: "2021",
-    challenges: "Creating a responsive UI, integrating 3rd party apis",
-    lessons: "Just start coding, you'll figure it out",
-    url: "https://canpark.vercel.com",
-    github: "https://github.com/raphaelchia/canpark",
-    projectRole: "Sole Developer",
-    highlights: "carpark search by map area",
-    showcaseImage: canparkImages,
+    projectHeader: "building a trading terminal",
+    projectTitle: "backprop",
+    desc: "A trading terminal for the Bittensor ecosystem, to abstract the complexities of actually trading on the network",
+    stack:
+      "React, Next.js, TailwindCSS, polkadotJS, viem, ethersjs nodejs, redis, prisma, recharts, pm2, docker, python, fastapi, DeepseekV3",
+    builtYear: "2025",
+    challenges:
+      "Balancing the UX of a trading terminal with the complexity of the trading logic, ensuring money values are transported correctly, ensuring clean re-renders in a page that has  3k LOC, selective caching",
+    lessons:
+      "Applying the right react principles from the start can save a lot of debugging time",
+
+    projectRole:
+      "frontend engineer, trading interface, charts, wallet connection and authentication, transaction signing and watchlists",
+    url: "https://backprop.finance",
+    highlights: "~USD$3-19m daily trading volume, ~1m+ monthly page views",
+    showcaseImage: backpropImages,
   },
   {
     projectHeader: "reskinning a staking dApp.",
@@ -36,21 +40,18 @@ const projects: Project[] = [
     showcaseImage: stakeTplxImages,
   },
   {
-    projectHeader: "building a trading terminal",
-    projectTitle: "backprop",
-    desc: "A trading terminal for the Bittensor ecosystem, to abstract the complexities of actually trading on the network",
-    stack: "React, Next.js, TailwindCSS, polkadotJS, viem, ",
-    builtYear: "2025",
-    challenges:
-      "Balancing the UX of a trading terminal with the complexity of the trading logic, ensuring money values are transported correctly, ensuring clean re-renders in a page that has  3k LOC",
-    lessons:
-      "Applying the right react principles from the start can save a lot of debugging time",
-
-    projectRole:
-      "frontend engineer, trading interface, charts, wallet connection and authentication, transaction signing and watchlists",
-    url: "https://backprop.finance",
-    highlights: "Average USD$3-19mil daily trading volume",
-    showcaseImage: backpropImages,
+    projectHeader: "My Hello World.",
+    projectTitle: "canpark",
+    desc: "Search for parking lots, anywhere in singapore",
+    stack: "React, Next.js, html, css, mapbox",
+    builtYear: "2021",
+    challenges: "Creating a responsive UI, integrating 3rd party apis",
+    lessons: "Just start coding, you'll figure it out",
+    url: "https://canpark.vercel.com",
+    github: "https://github.com/raphaelchia/canpark",
+    projectRole: "Sole Developer",
+    highlights: "carpark search by map area",
+    showcaseImage: canparkImages,
   },
 ];
 

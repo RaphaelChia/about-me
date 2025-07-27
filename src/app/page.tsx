@@ -1,5 +1,6 @@
 import LinkButton from "@/components/general/link-button";
 import { TooltipText } from "@/components/hovers/tooltip";
+import { createLoadingPlaceholder } from "@/lib/image-utils";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
@@ -36,6 +37,9 @@ const SentenceEmoji = ({
 };
 
 export default function Home() {
+  // Create a custom loading placeholder with "Loading" text
+  const loadingPlaceholder = createLoadingPlaceholder(200, 200, 16);
+
   return (
     <main className="pad-x-page pad-y-page flex-1 max-w-4xl mx-auto font-mono flex flex-col gap-3">
       <div className="flex gap-4">
@@ -44,6 +48,7 @@ export default function Home() {
           alt="Raphael Chia"
           width={200}
           height={100}
+          placeholder={loadingPlaceholder}
           className="aspect-square object-cover object-bottom  max-md:hidden border-[2px] border-foreground"
         />
         <div className="flex flex-col">
@@ -59,7 +64,7 @@ export default function Home() {
           <SentenceEmoji emoji="🇸🇬">singaporean</SentenceEmoji>
           <SentenceEmoji emoji="📍">singapore</SentenceEmoji>
           <SentenceEmoji emoji="💼">fullstack engineer </SentenceEmoji>
-          <div className="flex gap-4 mt-auto">
+          <div className="flex gap-4 mt-auto font-bold tracking-widest">
             <LinkButton href="/projects">projects</LinkButton>
             <LinkButton href="/contact">contact</LinkButton>
           </div>

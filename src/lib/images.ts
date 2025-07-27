@@ -2,6 +2,7 @@
 import BackpropImage from "@/../public/showcase/backprop.png";
 import BackpropPortfolio from "@/../public/showcase/backprop_portfolio.png";
 import BackpropScreener from "@/../public/showcase/backprop_screener.png";
+import BackpropStats from "@/../public/showcase/backprop_stats.png";
 import BackpropSwap from "@/../public/showcase/backprop_swap.png";
 import BackpropTerminalWatchlist from "@/../public/showcase/backprop_terminal_watchlist.png";
 
@@ -24,6 +25,7 @@ export const backpropImages = [
   BackpropSwap,
   BackpropScreener,
   BackpropPortfolio,
+  BackpropStats,
 ];
 export const stakeTplxImages = [
   StakeTplx,

@@ -2,14 +2,15 @@
 import { Button } from "@/components/general/button";
 import LinkButton from "@/components/general/link-button";
 import useScreenWidth from "@/hooks/useScreenWidth";
+import { createLoadingPlaceholder } from "@/lib/image-utils";
 import { cn } from "@/lib/utils";
 import {
-  IconBrandGithub,
-  IconChevronDown,
-  IconChevronLeft,
-  IconChevronRight,
-  IconChevronUp,
-  IconWorld,
+    IconBrandGithub,
+    IconChevronDown,
+    IconChevronLeft,
+    IconChevronRight,
+    IconChevronUp,
+    IconWorld,
 } from "@tabler/icons-react";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
@@ -41,6 +42,10 @@ type ShowcaseImage = {
 
 const ShowcaseImage = (props: { src: imageSrc[]; alt: string }) => {
   const [currentImageIdx, setCurrentImageIdx] = useState(0);
+
+  // Create a custom loading placeholder with "Loading" text
+  const loadingPlaceholder = createLoadingPlaceholder(400, 300, 24);
+
   return (
     <div className="relative ">
       <div className="relative font-mono overflow-hidden rounded-xl cursor-pointer text-background text-2xl">
@@ -83,7 +88,8 @@ const ShowcaseImage = (props: { src: imageSrc[]; alt: string }) => {
           alt={props.alt}
           width={1200}
           height={1200}
-          className="size-full lg:max-h-[300px] object-cover object-top-left border-[1px] border-foreground rounded-xl aspect-video"
+          placeholder={loadingPlaceholder}
+          className="size-full lg:max-h-[300px] object-cover object-top-left border-[1px] border-foreground rounded-xl aspect-video select-none"
         />
       </div>
       <div className=" absolute lg:left-[-20px] lg:top-[50%] lg:-translate-y-1/2 flex lg:flex-col gap-1 cursor-pointer flex-row bottom-2 left-1/2 -translate-x-1/2 size-fit">
@@ -202,32 +208,12 @@ const ShowcaseCard = ({
             <div className="grow">{projectTitle}</div>
           </div>
           <div className="flex">
-            <div className="w-[120px] shrink-0">description:</div>
-            <div className="grow">{desc}</div>
-          </div>
-          <div className="flex">
-            <div className="w-[120px] shrink-0">stack:</div>
-            <div className="grow">{stack}</div>
-          </div>
-          <div className="flex">
-            <div className="w-[120px] shrink-0">role:</div>
-            <div className="grow">{projectRole}</div>
-          </div>
-          <div className="flex">
             <div className="w-[120px] shrink-0">highlights:</div>
             <div className="grow">{highlights}</div>
           </div>
           <div className="flex">
             <div className="w-[120px] shrink-0">built year:</div>
             <div className="grow">{builtYear}</div>
-          </div>
-          <div className="flex">
-            <div className="w-[120px] shrink-0">challenges:</div>
-            <div className="grow">{challenges}</div>
-          </div>
-          <div className="flex">
-            <div className="w-[120px] shrink-0">lessons:</div>
-            <div className="grow">{lessons}</div>
           </div>
           <div className="flex">
             <div className="w-[120px] shrink-0">Status:</div>
@@ -241,6 +227,26 @@ const ShowcaseCard = ({
                 "preview only"
               )}
             </div>
+          </div>
+          <div className="flex">
+            <div className="w-[120px] shrink-0">stack:</div>
+            <div className="grow">{stack}</div>
+          </div>
+          <div className="flex">
+            <div className="w-[120px] shrink-0">role:</div>
+            <div className="grow">{projectRole}</div>
+          </div>
+          <div className="flex">
+            <div className="w-[120px] shrink-0">description:</div>
+            <div className="grow">{desc}</div>
+          </div>
+          <div className="flex">
+            <div className="w-[120px] shrink-0">challenges:</div>
+            <div className="grow">{challenges}</div>
+          </div>
+          <div className="flex">
+            <div className="w-[120px] shrink-0">lessons:</div>
+            <div className="grow">{lessons}</div>
           </div>
         </div>
         {showcaseImage ? (
