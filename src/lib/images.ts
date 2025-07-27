@@ -6,6 +6,15 @@ import BackpropStats from "@/../public/showcase/backprop_stats.png";
 import BackpropSwap from "@/../public/showcase/backprop_swap.png";
 import BackpropTerminalWatchlist from "@/../public/showcase/backprop_terminal_watchlist.png";
 
+//Hapigenes
+import HapigenesAncestry1 from "@/../public/showcase/hapigenes_ancestry1.png";
+import HapigenesAncestry2 from "@/../public/showcase/hapigenes_ancestry2.png";
+import HapigenesDashboard1 from "@/../public/showcase/hapigenes_dashboard1.png";
+import HapigenesGroupGraph from "@/../public/showcase/hapigenes_group_graph.png";
+import HapigenesPredisposition from "@/../public/showcase/hapigenes_predisposition.png";
+import HapigenesRegisterkit from "@/../public/showcase/hapigenes_registerkit.png";
+import HapigenesReportOverview from "@/../public/showcase/hapigenes_report_overview.png";
+
 // Canpark project
 import CanparkImage from "@/../public/showcase/canpark.png";
 import CanparkImage2 from "@/../public/showcase/canpark_mapsearch.png";
@@ -33,4 +42,14 @@ export const stakeTplxImages = [
   StakeBridge1,
   StakeBridge2,
   StakeExplorer,
+];
+
+export const hapigenesImages = [
+  HapigenesAncestry1,
+  HapigenesAncestry2,
+  HapigenesDashboard1,
+  HapigenesGroupGraph,
+  HapigenesPredisposition,
+  HapigenesRegisterkit,
+  HapigenesReportOverview,
 ];
