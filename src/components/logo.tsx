@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const MobileLogo = () => {
+const Logo = () => {
   return (
     <Link href="/" className="font-semibold text-2xl font-sans">
       ~/ raphael
@@ -8,4 +8,4 @@ const MobileLogo = () => {
   );
 };
 
-export default MobileLogo;
+export default Logo;

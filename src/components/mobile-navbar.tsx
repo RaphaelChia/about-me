@@ -1,5 +1,5 @@
 "use client";
-import MobileLogo from "@/components/logo";
+import Logo from "@/components/logo";
 import { NAVBAR_ITEMS } from "@/components/navbar/navbar";
 import { cn } from "@/lib/utils";
 import { IconMenu2 } from "@tabler/icons-react";
@@ -35,7 +35,9 @@ const MobileNavbar = () => {
             isOpen ? "translate-y-0" : "-translate-y-full"
           )}
         >
-          <MobileLogo />
+          <div className="pad-x-page h-[44px] flex items-center">
+            <Logo />
+          </div>
           {NAVBAR_ITEMS.map((item) => (
             <div
               key={item.label}

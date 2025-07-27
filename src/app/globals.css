@@ -6,6 +6,7 @@
   --background-secondary: #d9d9d9;
   --foreground: #151515;
   --foreground-secondary: #999;
+  --card-background: #f4f4f4;
   --border: #9c9c9c;
   --page-px: 24px;
   --page-py: 36px;
@@ -17,6 +18,7 @@
   --color-background-secondary: var(--background-secondary);
   --color-foreground: var(--foreground);
   --color-foreground-secondary: var(--foreground-secondary);
+  --color-card: var(--card-background);
   --color-border: var(--border);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -76,4 +78,41 @@ body {
   aspect-ratio: 1 / cos(30deg);
   clip-path: polygon(50% 0, 100% 100%, 0 100%);
   background: black;
+}
+
+.netv1 {
+  background: radial-gradient(
+        farthest-side at -33.33% 50%,
+        #0000 52%,
+        #151515 54% 57%,
+        #0000 59%
+      )
+      0 calc(216px / 2),
+    radial-gradient(
+        farthest-side at 50% 133.33%,
+        #0000 52%,
+        #151515 54% 57%,
+        #0000 59%
+      )
+      calc(216px / 2) 0,
+    radial-gradient(
+      farthest-side at 133.33% 50%,
+      #0000 52%,
+      #151515 54% 57%,
+      #0000 59%
+    ),
+    radial-gradient(
+      farthest-side at 50% -33.33%,
+      #0000 52%,
+      #151515 54% 57%,
+      #0000 59%
+    ),
+    #ffffff;
+  background-size: calc(216px / 4.667) 216px, 216px calc(216px / 4.667);
+}
+
+.longbar {
+  background: linear-gradient(135deg, #0000 18.75%, #ffffff 0 31.25%, #0000 0),
+    repeating-linear-gradient(45deg, #ffffff -6.25% 6.25%, #151515 0 18.75%);
+  background-size: 200px 200px;
 }

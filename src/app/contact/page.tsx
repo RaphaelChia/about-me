@@ -15,8 +15,8 @@ import Link from "next/link";
 
 const Page = () => {
   return (
-    <div className="flex-1  flex items-center justify-center pad-x-page">
-      <div className="border rounded-xl px-6 py-5 bg-background-secondary/20 font-mono flex flex-col gap-1">
+    <div className="flex-1 flex items-center justify-center pad-x-page netv1">
+      <div className="border-[2px] rounded-xl px-6 py-5 bg-card font-mono flex flex-col gap-1">
         <div className="text-sm max-w-[320px] mb-4">
           If you have any questions or you think we could make something happen,
           feel free to reach out!
