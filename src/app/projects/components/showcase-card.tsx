@@ -14,7 +14,7 @@ import {
 } from "@tabler/icons-react";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 
 type imageSrc = string | StaticImport;
 
@@ -42,7 +42,14 @@ type ShowcaseImage = {
 
 const ShowcaseImage = (props: { src: imageSrc[]; alt: string }) => {
   const [currentImageIdx, setCurrentImageIdx] = useState(0);
+  const [swappingImage, setSwappingImage] = useState(false);
 
+  const swapImage = useCallback(() => {
+    setSwappingImage(true);
+    setTimeout(() => {
+      setSwappingImage(false);
+    }, 30);
+  }, []);
   // Create a custom loading placeholder with "Loading" text
   const loadingPlaceholder = createLoadingPlaceholder(400, 300, 24);
 
@@ -62,9 +69,10 @@ const ShowcaseImage = (props: { src: imageSrc[]; alt: string }) => {
                 "opacity-0 hover:opacity-100 absolute left-0 top-0 w-3/12 h-full bg-foreground/60 flex items-center justify-center  max-lg:hover:opacity-0",
                 currentImageIdx == 0 && "hidden"
               )}
-              onClick={() =>
-                setCurrentImageIdx((prev) => (prev > 0 ? prev - 1 : prev))
-              }
+              onClick={() => {
+                setCurrentImageIdx((prev) => (prev > 0 ? prev - 1 : prev));
+                swapImage();
+              }}
             >
               <IconChevronLeft />
             </div>
@@ -73,24 +81,29 @@ const ShowcaseImage = (props: { src: imageSrc[]; alt: string }) => {
                 "opacity-0 hover:opacity-100 absolute right-0 top-0 w-3/12 h-full bg-foreground/60 flex items-center justify-center  max-lg:hover:opacity-0",
                 currentImageIdx == props.src.length - 1 && "hidden"
               )}
-              onClick={() =>
+              onClick={() => {
                 setCurrentImageIdx((prev) =>
                   prev < props.src.length - 1 ? prev + 1 : prev
-                )
-              }
+                );
+                swapImage();
+              }}
             >
               <IconChevronRight />
             </div>
           </>
         )}
-        <Image
-          src={props.src[currentImageIdx]}
-          alt={props.alt}
-          width={1200}
-          height={1200}
-          placeholder={loadingPlaceholder}
-          className="size-full lg:max-h-[300px] object-cover object-top-left border-[1px] border-foreground rounded-xl aspect-video select-none"
-        />
+        {swappingImage ? (
+          <div className="aspect-video size-full lg:max-h-300px border-[1px] border-foreground rounded-xl bg-background-secondary"></div>
+        ) : (
+          <Image
+            src={props.src[currentImageIdx]}
+            alt={props.alt}
+            width={1200}
+            height={1200}
+            placeholder={loadingPlaceholder}
+            className="size-full lg:max-h-[300px] object-cover object-top-left border-[1px] border-foreground rounded-xl aspect-video select-none"
+          />
+        )}
       </div>
       <div className=" absolute lg:left-[-20px] lg:top-[50%] lg:-translate-y-1/2 flex lg:flex-col gap-1 cursor-pointer flex-row bottom-2 left-1/2 -translate-x-1/2 size-fit">
         {props.src.map((s, i) => {
