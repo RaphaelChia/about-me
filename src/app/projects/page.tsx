@@ -2,6 +2,7 @@ import ShowcaseCard, { Project } from "@/app/projects/components/showcase-card";
 import {
   backpropImages,
   canparkImages,
+  dojoImages,
   hapigenesImages,
   stakeTplxImages,
 } from "@/lib/images";
@@ -59,6 +60,18 @@ const projects: Project[] = [
     highlights: "my mom loved it <3",
     url: "https://kit.hapigenes.com",
     showcaseImage: hapigenesImages,
+  },
+  {
+    projectHeader: "Internal AI Labelling Platform",
+    projectTitle: "Dojo",
+    desc: "A platform to label data for training AI models",
+    stack: "React, Nextjs, TailwindCSS",
+    builtYear: "2025",
+    challenges: "Figuring out the best user experience for labelling data",
+    lessons: "Simple but bespoke UI beats fancy UI with bad UX",
+    highlights: "Completed in 3 working days from scratch",
+    projectRole: "Sole Developer",
+    showcaseImage: dojoImages,
   },
   {
     projectHeader: "My Hello World.",
