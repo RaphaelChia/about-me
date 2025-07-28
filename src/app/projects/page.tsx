@@ -48,7 +48,7 @@ const projects: Project[] = [
   {
     projectHeader: "'IT Helpdesk' for my family",
     projectTitle: "HapiGenes",
-    desc: "Web integration with whitelabelled API to serve a fuss free DNA Kit testing service to users",
+    desc: "A project done for my mum's DNA whitelabelling business. This is a web application that integrates with whitelabelled API to serve a fuss free DNA Kit testing service to users",
     stack:
       "React, Nextjs, next Server Actions, supabase, nextAuth, tailwindcss, React-hook-form",
     builtYear: "2025",
