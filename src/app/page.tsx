@@ -4,7 +4,7 @@ import { TooltipText } from "@/components/hovers/tooltip";
 import { createLoadingPlaceholder } from "@/lib/image-utils";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 
 const Sentence = ({
   children,
@@ -30,14 +30,9 @@ const SentenceEmoji = ({
   children: React.ReactNode;
   className?: string;
 }) => {
-  const [ctr, setCtr] = useState(0);
   return (
     <div className={cn(`flex items-center gap-2`, className)}>
-      {ctr}
-      <div onClick={() => setCtr((prev) => prev + 1)} className="min-w-5">
-        {emoji}
-      </div>{" "}
-      <div>{children}</div>
+      <div className="min-w-5">{emoji}</div> <div>{children}</div>
     </div>
   );
 };

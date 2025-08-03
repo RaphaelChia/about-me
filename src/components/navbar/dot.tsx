@@ -10,9 +10,9 @@ const Dot = ({
   return (
     <div
       style={{ backgroundColor: color }}
-      className={cn("size-3 rounded-full flex group")}
+      className={cn("size-3 rounded-full flex")}
     >
-      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center size-full">
+      <div className="opacity-0 group-hover/dot:opacity-100 transition-opacity duration-300 flex items-center justify-center size-full">
         {hoverElement}
       </div>
     </div>

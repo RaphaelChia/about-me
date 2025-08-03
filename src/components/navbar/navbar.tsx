@@ -68,7 +68,7 @@ const Navbar = () => {
             )
           )}
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-2 group/dot">
           <Dot
             hoverElement={<IconArrowsDiagonal2 size={10} />}
             color="#29C73F"
