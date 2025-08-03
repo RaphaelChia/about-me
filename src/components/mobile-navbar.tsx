@@ -55,7 +55,7 @@ const MobileNavbar = () => {
                   {item.disabled ? item.disabledMessage ?? "coming soon" : ""}
                 </span>
               </Link>
-              <div className="-translate-x-full peer-hover:translate-x-0 w-full h-full bg-foreground absolute top-0 left-0 transition-all duration-500 ">
+              <div className="-translate-x-full peer-hover:translate-x-0 w-full h-full bg-foreground absolute top-0 left-0 transition-all duration-500 ease-out">
                 {" "}
               </div>
             </div>
