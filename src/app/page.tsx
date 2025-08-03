@@ -1,9 +1,10 @@
+"use client";
 import LinkButton from "@/components/general/link-button";
 import { TooltipText } from "@/components/hovers/tooltip";
 import { createLoadingPlaceholder } from "@/lib/image-utils";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 const Sentence = ({
   children,
@@ -29,9 +30,14 @@ const SentenceEmoji = ({
   children: React.ReactNode;
   className?: string;
 }) => {
+  const [ctr, setCtr] = useState(0);
   return (
     <div className={cn(`flex items-center gap-2`, className)}>
-      <div className="min-w-5">{emoji}</div> <div>{children}</div>
+      {ctr}
+      <div onClick={() => setCtr((prev) => prev + 1)} className="min-w-5">
+        {emoji}
+      </div>{" "}
+      <div>{children}</div>
     </div>
   );
 };
@@ -65,8 +71,18 @@ export default function Home() {
           <SentenceEmoji emoji="📍">singapore</SentenceEmoji>
           <SentenceEmoji emoji="💼">fullstack engineer </SentenceEmoji>
           <div className="flex gap-4 mt-auto font-bold tracking-widest">
-            <LinkButton href="/projects">projects</LinkButton>
-            <LinkButton href="/contact">contact</LinkButton>
+            <LinkButton
+              className=" px-1 text-background bg-foreground hover:bg-background hover:text-foreground"
+              href="/projects"
+            >
+              projects
+            </LinkButton>
+            <LinkButton
+              className="px-1 text-background bg-foreground hover:bg-background hover:text-foreground"
+              href="/contact"
+            >
+              contact
+            </LinkButton>
           </div>
         </div>
       </div>
@@ -106,7 +122,9 @@ export default function Home() {
       <Sentence>
         After much consideration, a major decision was made to terminate my bond
         early
-        <TooltipText hoverContents="The sum was 130% my school fees :(">
+        <TooltipText
+          hoverContents={<div>The sum was 130% my school fees :(</div>}
+        >
           <span>(💸💸)</span>
         </TooltipText>{" "}
         and moved to yet another DevOps role, but this time, at a startup.

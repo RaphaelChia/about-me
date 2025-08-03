@@ -65,6 +65,7 @@ const TooltipText = ({
   side = "top",
   underline,
   underlinePattern,
+  ...props
 }: React.ComponentProps<typeof TooltipContent> & {
   hoverContents: React.ReactNode;
   side?: "top" | "bottom" | "left" | "right";
@@ -83,7 +84,9 @@ const TooltipText = ({
       >
         {children}
       </TooltipTrigger>
-      <TooltipContent side={side}>{hoverContents}</TooltipContent>
+      <TooltipContent sideOffset={props.sideOffset} side={side}>
+        {hoverContents}
+      </TooltipContent>
     </Tooltip>
   );
 };
