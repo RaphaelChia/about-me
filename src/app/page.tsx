@@ -121,15 +121,16 @@ export default function Home() {
           hoverContents={<div>The sum was 130% my school fees :(</div>}
         >
           <span>(💸💸)</span>
-        </TooltipText>{" "}
-        and moved to yet another DevOps role, but this time, at a startup.
+        </TooltipText>
+        &nbsp; and moved to yet another DevOps role, but this time, at a
+        startup.
       </Sentence>
       <Sentence>
         I loved it. I grew a lot, technically and holistically. Learnt how to
         move fast, be independent, take responsibility, and to work in a team.
       </Sentence>
       <Sentence>
-        With Telepathy Labs,{" "}
+        With Telepathy Labs,&nbsp;
         <em className="font-bold ">
           I began making more decisions that came with consequences
         </em>
@@ -153,15 +154,15 @@ export default function Home() {
         >
           backprop.finance
         </LinkButton>
-        , reskinned{" "}
+        , reskinned&nbsp;
         <LinkButton
           external
           className="inline-flex"
           href="https://stake.tensorplex.ai"
         >
           stake.tensorplex.ai
-        </LinkButton>{" "}
-        and more.
+        </LinkButton>
+        &nbsp; and more.
       </Sentence>
       <Sentence>
         Until today, i&apos;m still as hungry as ever for new challenges, to
@@ -169,15 +170,15 @@ export default function Home() {
         own Saas. Who knows? We&apos;ll see.
       </Sentence>
       <Sentence>
-        Drop me a message on{" "}
+        Drop me a message on&nbsp;
         <LinkButton
           external
           className="inline-flex"
           href="https://www.linkedin.com/in/raphaelchia"
         >
           <div className="flex items-center gap-1">linkedin</div>
-        </LinkButton>{" "}
-        to connect!
+        </LinkButton>
+        &nbsp; to connect!
       </Sentence>
       <div className="text-xs text-end mt-12">last updated 27 july 2025</div>
     </main>

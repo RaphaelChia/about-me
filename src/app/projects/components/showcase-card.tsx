@@ -233,7 +233,7 @@ const ShowcaseCard = ({
             <div className="grow">
               {url ? (
                 <div className="flex items-center gap-2">
-                  deployed{" "}
+                  deployed&nbsp;
                   <div className="translate-y-0.5 size-2 rounded-full bg-green-500 animate-pulse"></div>
                 </div>
               ) : (

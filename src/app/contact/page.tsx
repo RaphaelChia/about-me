@@ -40,7 +40,7 @@ const Page = () => {
           >
             <>
               <IconBrandLinkedin size={18} strokeWidth={1.5} />
-              LinkedIn{" "}
+              LinkedIn&nbsp;
             </>
           </CopyButton>
         </Link>
@@ -63,7 +63,7 @@ const Page = () => {
           >
             <>
               <IconBrandGithub size={18} strokeWidth={1.5} />
-              GitHub{" "}
+              GitHub&nbsp;
             </>
           </CopyButton>
         </Link>
@@ -73,7 +73,7 @@ const Page = () => {
           className="text-sm flex gap-1 items-center group/linkedin cursor-pointer"
         >
           <IconFileCv size={18} strokeWidth={1.5} />
-          Resume{" "}
+          Resume&nbsp;
           <IconDownload
             className="md:group-hover/linkedin:opacity-100 transition-all duration-300 md:opacity-0"
             size={16}
@@ -97,7 +97,7 @@ const Page = () => {
         >
           <>
             <IconShare3 size={18} strokeWidth={1.5} />
-            Share this page{" "}
+            Share this page&nbsp;
           </>
         </CopyButton>
       </div>
