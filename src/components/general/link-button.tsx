@@ -39,7 +39,7 @@ const LinkButton = ({
           children
         )}
       </Link>
-      &nbsp;
+
       {external ? (
         <IconExternalLink
           className={cn("inline", hideIconMobile && "max-md:hidden")}
