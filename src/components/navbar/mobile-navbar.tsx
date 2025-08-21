@@ -1,8 +1,8 @@
 "use client";
 import Logo from "@/components/logo";
+import Hamburger from "@/components/navbar/hamburger";
 import { NAVBAR_ITEMS } from "@/components/navbar/navbar";
 import { cn } from "@/lib/utils";
-import { IconMenu2 } from "@tabler/icons-react";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 
@@ -22,12 +22,19 @@ const MobileNavbar = () => {
       document.removeEventListener("click", handleClickOutside);
     };
   }, [handleClickOutside]);
+
+  const handleOpenClick = useCallback(() => {
+    setIsOpen((prev) => !prev);
+    console.log("onclicked called.", isOpen);
+  }, []);
   return (
     <>
-      <IconMenu2
-        className="max-md:flex hidden z-10 ml-auto cursor-pointer"
-        onClick={() => setIsOpen((prev) => !prev)}
+      <Hamburger
+        className="max-md:flex hidden z-10 ml-auto cursor-pointer mobile-navbar"
+        open={isOpen}
+        onClick={handleOpenClick}
       />
+
       {
         <div
           className={cn(

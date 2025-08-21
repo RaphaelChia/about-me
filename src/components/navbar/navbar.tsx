@@ -1,6 +1,6 @@
 import { default as Logo } from "@/components/logo";
-import MobileNavbar from "@/components/mobile-navbar";
 import Dot from "@/components/navbar/dot";
+import MobileNavbar from "@/components/navbar/mobile-navbar";
 import { cn } from "@/lib/utils";
 import { IconArrowsDiagonal2, IconMinus, IconX } from "@tabler/icons-react";
 import Link from "next/link";
