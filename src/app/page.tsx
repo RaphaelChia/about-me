@@ -1,10 +1,11 @@
-"use client";
-import LinkButton from "@/components/general/link-button";
-import { TooltipText } from "@/components/hovers/tooltip";
-import { createLoadingPlaceholder } from "@/lib/image-utils";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
-import React from "react";
+'use client';
+
+import LinkButton from '@/components/general/link-button';
+import { TooltipText } from '@/components/hovers/tooltip';
+import { createLoadingPlaceholder } from '@/lib/image-utils';
+import { cn } from '@/lib/utils';
+import Image from 'next/image';
+import React from 'react';
 
 const Sentence = ({
   children,
@@ -14,9 +15,9 @@ const Sentence = ({
   className?: string;
 }) => {
   return (
-    <div className={cn(`flex  gap-2 items-start`, className)}>
-      <span className="leading-4.5  min-w-5">&gt;</span>
-      <div className="leading-4.5 ">{children}</div>
+    <div className={cn(`flex items-start gap-2`, className)}>
+      <span className="min-w-5 leading-4.5">&gt;</span>
+      <div className="leading-4.5">{children}</div>
     </div>
   );
 };
@@ -42,7 +43,7 @@ export default function Home() {
   const loadingPlaceholder = createLoadingPlaceholder(200, 200, 16);
 
   return (
-    <main className="pad-x-page pad-y-page flex-1 max-w-4xl mx-auto font-mono flex flex-col gap-3">
+    <main className="pad-x-page pad-y-page mx-auto flex max-w-4xl flex-1 flex-col gap-3 font-mono">
       <div className="flex gap-4">
         <Image
           src="/portrait.jpg"
@@ -50,30 +51,30 @@ export default function Home() {
           width={200}
           height={100}
           placeholder={loadingPlaceholder}
-          className="aspect-square object-cover object-bottom  max-md:hidden border-[2px] border-foreground"
+          className="aspect-square border-[2px] border-foreground object-cover object-bottom max-md:hidden"
         />
         <div className="flex flex-col">
           <TooltipText
             side="top"
             hoverContents={
-              <div className="text-6xl tracking-widest p-4">谢松佐</div>
+              <div className="p-4 text-6xl tracking-widest">谢松佐</div>
             }
           >
-            <div className="font-bold text-6xl ">Raphael Chia</div>
+            <div className="text-6xl font-bold">Raphael Chia</div>
           </TooltipText>
           <SentenceEmoji emoji="⏳">29 y.o </SentenceEmoji>
           <SentenceEmoji emoji="🇸🇬">singaporean</SentenceEmoji>
           <SentenceEmoji emoji="📍">singapore</SentenceEmoji>
           <SentenceEmoji emoji="💼">fullstack engineer </SentenceEmoji>
-          <div className="flex gap-4 mt-auto font-bold tracking-widest">
+          <div className="mt-auto flex gap-[1px] font-bold tracking-widest">
             <LinkButton
-              className=" px-1 text-background bg-foreground hover:bg-background hover:text-foreground"
+              className="bg-foreground p-1 text-background hover:bg-background hover:text-foreground"
               href="/projects"
             >
               projects
             </LinkButton>
             <LinkButton
-              className="px-1 text-background bg-foreground hover:bg-background hover:text-foreground"
+              className="bg-foreground px-1 text-background hover:bg-background hover:text-foreground"
               href="/contact"
             >
               contact
@@ -107,7 +108,7 @@ export default function Home() {
             </div>
           }
         >
-          <div className=" inline-flex">It was fine.</div>
+          <div className="inline-flex">It was fine.</div>
         </TooltipText>
       </Sentence>
       <Sentence>
@@ -131,7 +132,7 @@ export default function Home() {
       </Sentence>
       <Sentence>
         With Telepathy Labs,&nbsp;
-        <em className="font-bold ">
+        <em className="font-bold">
           I began making more decisions that came with consequences
         </em>
         . This is where true growth happened for me.
@@ -180,7 +181,7 @@ export default function Home() {
         </LinkButton>
         &nbsp; to connect!
       </Sentence>
-      <div className="text-xs text-end mt-12">last updated 27 july 2025</div>
+      <div className="mt-12 text-end text-xs">last updated 27 july 2025</div>
     </main>
   );
 }

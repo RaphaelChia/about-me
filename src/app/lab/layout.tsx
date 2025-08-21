@@ -1,8 +1,8 @@
-import ContentsSidebar from "@/app/lab/components/contents-sidebar";
+import ContentsSidebar from '@/app/lab/components/contents-sidebar';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex items-stretch">
+    <div className="flex">
       <ContentsSidebar />
       {children}
     </div>
