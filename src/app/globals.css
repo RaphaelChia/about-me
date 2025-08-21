@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @plugin 'tailwindcss-animate';
 
 :root {
@@ -6,6 +6,7 @@
   --background-secondary: #d9d9d9;
   --foreground: #151515;
   --foreground-secondary: #999;
+  --foreground-neutral: #4a5565;
   --card-background: #f4f4f4;
   --border: #9c9c9c;
   --page-px: 24px;
@@ -18,6 +19,7 @@
   --color-background-secondary: var(--background-secondary);
   --color-foreground: var(--foreground);
   --color-foreground-secondary: var(--foreground-secondary);
+  --color-foreground-neutral: var(--foreground-neutral);
   --color-card: var(--card-background);
   --color-border: var(--border);
   --font-sans: var(--font-geist-sans);
@@ -81,7 +83,8 @@ body {
 }
 
 .netv1 {
-  background: radial-gradient(
+  background:
+    radial-gradient(
         farthest-side at -33.33% 50%,
         #0000 52%,
         #151515 54% 57%,
@@ -108,11 +111,14 @@ body {
       #0000 59%
     ),
     #ffffff;
-  background-size: calc(216px / 4.667) 216px, 216px calc(216px / 4.667);
+  background-size:
+    calc(216px / 4.667) 216px,
+    216px calc(216px / 4.667);
 }
 
 .longbar {
-  background: linear-gradient(135deg, #0000 18.75%, #ffffff 0 31.25%, #0000 0),
+  background:
+    linear-gradient(135deg, #0000 18.75%, #ffffff 0 31.25%, #0000 0),
     repeating-linear-gradient(45deg, #ffffff -6.25% 6.25%, #151515 0 18.75%);
   background-size: 200px 200px;
 }
