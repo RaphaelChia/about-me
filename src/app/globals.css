@@ -1,16 +1,23 @@
 @import 'tailwindcss';
 @plugin 'tailwindcss-animate';
 
-:root {
-  --background: #ffffff;
-  --background-secondary: #eae7e7;
-  --foreground: #151515;
-  --foreground-secondary: #999;
-  --foreground-neutral: #4a5565;
-  --card-background: #f4f4f4;
-  --border: #9c9c9c;
-  --page-px: 24px;
-  --page-py: 36px;
+/* Add accordion animations */
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
 }
 
 @theme inline {
@@ -25,6 +32,22 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --shadow-button: -6px 6px 0px 0px var(--border);
+
+  /* Add animation utilities */
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+}
+
+:root {
+  --background: #ffffff;
+  --background-secondary: #eae7e7;
+  --foreground: #151515;
+  --foreground-secondary: #999;
+  --foreground-neutral: #4a5565;
+  --card-background: #f4f4f4;
+  --border: #9c9c9c;
+  --page-px: 24px;
+  --page-py: 36px;
 }
 /* 
 @media (prefers-color-scheme: dark) {

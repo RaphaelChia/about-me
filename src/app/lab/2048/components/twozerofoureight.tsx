@@ -206,7 +206,7 @@ const TwoZeroFourEight = () => {
     <div className="flex w-full items-center justify-center gap-8 p-8 font-mono max-lg:flex-col">
       <div
         className={cn(
-          'w-fit rounded-lg border border-transparent bg-white p-8 transition-all duration-500',
+          'w-fit shrink-0 rounded-lg border border-transparent bg-white p-8 transition-all duration-500',
           gameStarted &&
             'translate-x-[6px] -translate-y-[6px] border-border shadow-button',
         )}
@@ -273,7 +273,10 @@ const TwoZeroFourEight = () => {
         {/* Controls */}
       </div>
       <TouchControls showControls={gameStarted} onMove={moveGrid} />
-      <Instructions />
+      <div className="flex flex-col gap-8">
+        <Instructions />
+        {/* <Two048Context /> */}
+      </div>
     </div>
   );
 };

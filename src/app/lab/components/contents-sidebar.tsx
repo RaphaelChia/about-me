@@ -2,6 +2,7 @@
 
 import Badge from '@/components/general/badge';
 import { Button } from '@/components/general/button';
+import { TooltipText } from '@/components/hovers/tooltip';
 import {
   Command,
   CommandEmpty,
@@ -63,8 +64,20 @@ const LabContent = ({ content }: { content: ContentItem }) => {
     return <div className="text-sm font-semibold">{content.title}</div>;
   }
   return (
-    <div key={content.href} className="text-sm">
-      <Link href={content.href}>{content.title}</Link>
+    <div
+      key={content.href}
+      className={cn('text-sm', content.underConstruction && 'opacity-50')}
+    >
+      <TooltipText
+        side="right"
+        hoverContents={content.underConstruction ? 'Under construction' : null}
+      >
+        {content.underConstruction ? (
+          <span className="select-none">{content.title}</span>
+        ) : (
+          <Link href={content.href}>{content.title}</Link>
+        )}
+      </TooltipText>
     </div>
   );
 };
