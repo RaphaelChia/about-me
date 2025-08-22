@@ -1,9 +1,9 @@
-import ContentsSidebar from '@/app/lab/components/contents-sidebar';
+import LabContentsSidebar from '@/app/lab/components/contents-sidebar';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex max-lg:flex-col">
-      <ContentsSidebar />
+      <LabContentsSidebar />
       {children}
     </div>
   );

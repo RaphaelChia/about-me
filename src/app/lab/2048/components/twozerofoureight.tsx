@@ -11,7 +11,10 @@ import {
   moveRowLeft,
 } from '@/app/lab/2048/utils';
 import { Button } from '@/components/general/button';
+import KeyboardHint from '@/components/general/keyboard-hint';
+import useKeybindListener from '@/hooks/keyboard/use-keybind-listener';
 import { cn } from '@/lib/utils';
+import { IconCornerDownLeft } from '@tabler/icons-react';
 import { atom, useAtom } from 'jotai';
 import { atomWithStorage } from 'jotai/utils';
 import { useCallback, useEffect, useState } from 'react';
@@ -154,6 +157,15 @@ const TwoZeroFourEight = () => {
     ],
   );
 
+  useKeybindListener({
+    targetKey: 'enter',
+    callback: () => {
+      if (!gameStarted) {
+        startGame();
+      }
+    },
+  });
+
   // Handle keyboard input
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
@@ -211,7 +223,18 @@ const TwoZeroFourEight = () => {
               variant={'inverted'}
               onClick={startGame}
             >
-              {gameStarted ? 'New Game' : 'Start Game'}
+              {gameStarted ? (
+                'New Game'
+              ) : (
+                <>
+                  Start{' '}
+                  <KeyboardHint
+                    keys={[<IconCornerDownLeft key="keyboard-hint-1" />]}
+                  >
+                    <IconCornerDownLeft />
+                  </KeyboardHint>
+                </>
+              )}
             </Button>
             <div className="w-[100px] flex-1 bg-foreground"></div>
           </div>

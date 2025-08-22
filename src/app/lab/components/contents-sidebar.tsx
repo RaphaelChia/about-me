@@ -1,5 +1,6 @@
 'use client';
 
+import Badge from '@/components/general/badge';
 import { Button } from '@/components/general/button';
 import {
   Command,
@@ -57,22 +58,18 @@ const contentItems: ContentItem[] = [
   },
 ];
 
-const Content = ({ content }: { content: ContentItem }) => {
+const LabContent = ({ content }: { content: ContentItem }) => {
   if (content.type === 'title') {
-    return (
-      <div className="text-sm font-semibold text-foreground-secondary">
-        {content.title}
-      </div>
-    );
+    return <div className="text-sm font-semibold">{content.title}</div>;
   }
   return (
-    <div key={content.href} className="text-sm font-semibold">
+    <div key={content.href} className="text-sm">
       <Link href={content.href}>{content.title}</Link>
     </div>
   );
 };
 
-const ContentsSidebarMobile = () => {
+const LabContentsSidebarMobile = () => {
   const pn = usePathname();
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(pn.split('/').pop());
@@ -113,6 +110,7 @@ const ContentsSidebarMobile = () => {
                   if (content.type === 'link')
                     return (
                       <CommandItem
+                        disabled={content.underConstruction}
                         key={content.id}
                         value={content.id}
                         className="hover:bg-foreground-neutral hover:text-background"
@@ -121,7 +119,12 @@ const ContentsSidebarMobile = () => {
                           router.push(content.href);
                         }}
                       >
-                        {content.title}
+                        {content.title}{' '}
+                        {content.underConstruction && (
+                          <Badge className="absolute top-[50%] right-0 -translate-y-1/2">
+                            U/C
+                          </Badge>
+                        )}
                         <IconCheck
                           className={cn(
                             'ml-auto',
@@ -143,19 +146,19 @@ const ContentsSidebarMobile = () => {
   );
 };
 
-const ContentsSidebar = () => {
+const LabContentsSidebar = () => {
   return (
     <>
       <div className="pad-y-page pad-x-page flex h-[calc(100dvh-66px)] w-[200px] shrink-0 flex-col gap-2 max-lg:hidden">
         <div className="sticky top-0 flex flex-col gap-2">
           {contentItems.map((item) => (
-            <Content key={`lab-${item.title}`} content={item} />
+            <LabContent key={`lab-${item.title}`} content={item} />
           ))}
         </div>
       </div>
-      <ContentsSidebarMobile />
+      <LabContentsSidebarMobile />
     </>
   );
 };
 
-export default ContentsSidebar;
+export default LabContentsSidebar;

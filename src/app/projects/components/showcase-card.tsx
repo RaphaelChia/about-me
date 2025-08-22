@@ -1,9 +1,10 @@
-"use client";
-import { Button } from "@/components/general/button";
-import LinkButton from "@/components/general/link-button";
-import useScreenWidth from "@/hooks/useScreenWidth";
-import { createLoadingPlaceholder } from "@/lib/image-utils";
-import { cn } from "@/lib/utils";
+'use client';
+
+import { Button } from '@/components/general/button';
+import LinkButton from '@/components/general/link-button';
+import useScreenWidth from '@/hooks/screen/use-screen-width';
+import { createLoadingPlaceholder } from '@/lib/image-utils';
+import { cn } from '@/lib/utils';
 import {
   IconBrandGithub,
   IconChevronDown,
@@ -11,14 +12,14 @@ import {
   IconChevronRight,
   IconChevronUp,
   IconWorld,
-} from "@tabler/icons-react";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import Image from "next/image";
-import React, { useCallback, useState } from "react";
+} from '@tabler/icons-react';
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
+import Image from 'next/image';
+import React, { useCallback, useState } from 'react';
 
 type imageSrc = string | StaticImport;
 
-export interface Project extends React.ComponentProps<"div"> {
+export interface Project extends React.ComponentProps<'div'> {
   projectTitle: React.ReactNode;
   projectHeader: React.ReactNode;
   desc: React.ReactNode;
@@ -54,20 +55,20 @@ const ShowcaseImage = (props: { src: imageSrc[]; alt: string }) => {
   const loadingPlaceholder = createLoadingPlaceholder(400, 300, 24);
 
   return (
-    <div className="relative ">
-      <div className="relative font-mono overflow-hidden rounded-xl cursor-pointer text-background text-2xl">
+    <div className="relative">
+      <div className="relative cursor-pointer overflow-hidden rounded-xl font-mono text-2xl text-background">
         {props.src.length > 1 && (
           <>
-            <div className="lg:hidden absolute left-2 top-1/2 -translate-y-1/2 bg-foreground/20">
+            <div className="absolute top-1/2 left-2 -translate-y-1/2 bg-foreground/20 lg:hidden">
               <IconChevronLeft strokeWidth={3} />
             </div>
-            <div className="lg:hidden absolute right-2 top-1/2 -translate-y-1/2 bg-foreground/20">
+            <div className="absolute top-1/2 right-2 -translate-y-1/2 bg-foreground/20 lg:hidden">
               <IconChevronRight strokeWidth={3} />
             </div>
             <div
               className={cn(
-                "opacity-0 hover:opacity-100 absolute left-0 top-0 w-3/12 h-full bg-foreground/60 flex items-center justify-center  max-lg:hover:opacity-0",
-                currentImageIdx == 0 && "hidden"
+                'absolute top-0 left-0 flex h-full w-3/12 items-center justify-center bg-foreground/60 opacity-0 hover:opacity-100 max-lg:hover:opacity-0',
+                currentImageIdx == 0 && 'hidden',
               )}
               onClick={() => {
                 setCurrentImageIdx((prev) => (prev > 0 ? prev - 1 : prev));
@@ -78,12 +79,12 @@ const ShowcaseImage = (props: { src: imageSrc[]; alt: string }) => {
             </div>
             <div
               className={cn(
-                "opacity-0 hover:opacity-100 absolute right-0 top-0 w-3/12 h-full bg-foreground/60 flex items-center justify-center  max-lg:hover:opacity-0",
-                currentImageIdx == props.src.length - 1 && "hidden"
+                'absolute top-0 right-0 flex h-full w-3/12 items-center justify-center bg-foreground/60 opacity-0 hover:opacity-100 max-lg:hover:opacity-0',
+                currentImageIdx == props.src.length - 1 && 'hidden',
               )}
               onClick={() => {
                 setCurrentImageIdx((prev) =>
-                  prev < props.src.length - 1 ? prev + 1 : prev
+                  prev < props.src.length - 1 ? prev + 1 : prev,
                 );
                 swapImage();
               }}
@@ -93,7 +94,7 @@ const ShowcaseImage = (props: { src: imageSrc[]; alt: string }) => {
           </>
         )}
         {swappingImage ? (
-          <div className="aspect-video size-full lg:max-h-300px border-[1px] border-foreground rounded-xl bg-background-secondary"></div>
+          <div className="lg:max-h-300px aspect-video size-full rounded-xl border-[1px] border-foreground bg-background-secondary"></div>
         ) : (
           <Image
             src={props.src[currentImageIdx]}
@@ -101,19 +102,19 @@ const ShowcaseImage = (props: { src: imageSrc[]; alt: string }) => {
             width={1200}
             height={1200}
             placeholder={loadingPlaceholder}
-            className="size-full lg:max-h-[300px] object-cover object-top-left border-[1px] border-foreground rounded-xl aspect-video select-none"
+            className="aspect-video size-full rounded-xl border-[1px] border-foreground object-cover object-top-left select-none lg:max-h-[300px]"
           />
         )}
       </div>
-      <div className=" absolute lg:left-[-20px] lg:top-[50%] lg:-translate-y-1/2 flex lg:flex-col gap-1 cursor-pointer flex-row bottom-2 left-1/2 -translate-x-1/2 size-fit">
+      <div className="absolute bottom-2 left-1/2 flex size-fit -translate-x-1/2 cursor-pointer flex-row gap-1 lg:top-[50%] lg:left-[-20px] lg:-translate-y-1/2 lg:flex-col">
         {props.src.map((s, i) => {
           return (
             <div
               key={i}
               onClick={() => setCurrentImageIdx(i)}
               className={cn(
-                "size-3 rounded-full border transition-colors duration-300",
-                currentImageIdx == i ? "bg-foreground" : "bg-background"
+                'size-3 rounded-full border transition-colors duration-300',
+                currentImageIdx == i ? 'bg-foreground' : 'bg-background',
               )}
             ></div>
           );
@@ -130,11 +131,11 @@ const MobileShowcaseImage = (props: ShowcaseImage) => {
   return (
     <div
       className={cn(
-        " w-full lg:w-5/12 shrink-0 px-6 pb-6 flex flex-col justify-center",
-        props.className
+        'flex w-full shrink-0 flex-col justify-center px-6 pb-6 lg:w-5/12',
+        props.className,
       )}
     >
-      <Button variant={"link"} onClick={() => setShowPreview((prev) => !prev)}>
+      <Button variant={'link'} onClick={() => setShowPreview((prev) => !prev)}>
         {showPreview ? (
           <div className="flex items-center gap-2">
             <span className="w-[60px] text-center">Hide</span> <IconChevronUp />
@@ -152,7 +153,7 @@ const MobileShowcaseImage = (props: ShowcaseImage) => {
 
 const DesktopShowcaseImage = (props: ShowcaseImage) => {
   return (
-    <div className="max-lg:hidden w-full md:w-5/12 shrink-0 p-6 ">
+    <div className="w-full shrink-0 p-6 max-lg:hidden md:w-5/12">
       <ShowcaseImage src={props.src} alt={props.alt} />
     </div>
   );
@@ -176,14 +177,14 @@ const ShowcaseCard = ({
 }: Project) => {
   return (
     <div
-      className={cn("flex flex-col  border-b font-mono lowercase ", className)}
+      className={cn('flex flex-col border-b font-mono lowercase', className)}
       {...props}
     >
-      <div className="flex text-base shrink-0 mt-4">
-        <div className="grow pad-x-page py-1 h-[34px] truncate font-bold">
+      <div className="mt-4 flex shrink-0 text-base">
+        <div className="pad-x-page h-[34px] grow truncate py-1 font-bold">
           &gt; {projectHeader}
         </div>
-        <div className="w-fit shrink-0 text-base pad-x-page text-end flex items-center justify-end gap-4 h-[34px]">
+        <div className="pad-x-page flex h-[34px] w-fit shrink-0 items-center justify-end gap-4 text-end text-base">
           {url && (
             <LinkButton
               hideIconMobile={true}
@@ -214,8 +215,8 @@ const ShowcaseCard = ({
           )}
         </div>
       </div>
-      <div className="flex lg:flex-row flex-col">
-        <div className="grow pad-x-page py-[22px] flex flex-col text-sm gap-3">
+      <div className="flex flex-col lg:flex-row">
+        <div className="pad-x-page flex grow flex-col gap-3 py-[22px] text-sm">
           <div className="flex">
             <div className="w-[120px] shrink-0">title:</div>
             <div className="grow">{projectTitle}</div>
@@ -234,10 +235,10 @@ const ShowcaseCard = ({
               {url ? (
                 <div className="flex items-center gap-2">
                   deployed&nbsp;
-                  <div className="translate-y-0.5 size-2 rounded-full bg-green-500 animate-pulse"></div>
+                  <div className="size-2 translate-y-0.5 animate-pulse rounded-full bg-green-500"></div>
                 </div>
               ) : (
-                "preview only"
+                'preview only'
               )}
             </div>
           </div>
@@ -265,17 +266,17 @@ const ShowcaseCard = ({
         {showcaseImage ? (
           <>
             <DesktopShowcaseImage
-              href={url ?? ""}
-              className={cn("max-md:hidden")}
+              href={url ?? ''}
+              className={cn('max-md:hidden')}
               src={showcaseImage}
-              alt={"preview"}
+              alt={'preview'}
             />
 
             <MobileShowcaseImage
-              href={url ?? ""}
-              className={cn("")}
+              href={url ?? ''}
+              className={cn('')}
               src={showcaseImage}
-              alt={"preview"}
+              alt={'preview'}
             />
           </>
         ) : (
