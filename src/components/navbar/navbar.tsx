@@ -1,9 +1,9 @@
-import { default as Logo } from "@/components/logo";
-import Dot from "@/components/navbar/dot";
-import MobileNavbar from "@/components/navbar/mobile-navbar";
-import { cn } from "@/lib/utils";
-import { IconArrowsDiagonal2, IconMinus, IconX } from "@tabler/icons-react";
-import Link from "next/link";
+import { default as Logo } from '@/components/logo';
+import Dot from '@/components/navbar/dot';
+import MobileNavbar from '@/components/navbar/mobile-navbar';
+import { cn } from '@/lib/utils';
+import { IconArrowsDiagonal2, IconMinus, IconX } from '@tabler/icons-react';
+import Link from 'next/link';
 
 export type NAVBAR_ITEM = {
   label: string;
@@ -15,15 +15,21 @@ export type NAVBAR_ITEM = {
 
 export const NAVBAR_ITEMS: NAVBAR_ITEM[] = [
   {
-    label: "projects",
-    labelSecondary: "projects",
-    href: "/projects",
+    label: 'projects',
+    labelSecondary: 'projects',
+    href: '/projects',
     disabled: false,
   },
   {
-    label: "contact",
-    labelSecondary: "contact",
-    href: "/contact",
+    label: 'contact',
+    labelSecondary: 'contact',
+    href: '/contact',
+    disabled: false,
+  },
+  {
+    label: 'lab',
+    labelSecondary: 'lab',
+    href: '/lab/2048',
     disabled: false,
   },
 ];
@@ -31,13 +37,13 @@ export const NAVBAR_ITEMS: NAVBAR_ITEM[] = [
 const NavbarItem = ({
   label,
   href,
-}: React.ComponentProps<"button"> & NAVBAR_ITEM) => {
+}: React.ComponentProps<'button'> & NAVBAR_ITEM) => {
   return (
     <Link
       href={href}
-      className="bg-foreground text-background flex min-w-[120px]"
+      className="flex min-w-[120px] bg-foreground text-background"
     >
-      <div className="cursor-pointer duration-300 transition-all hover:translate-x-1 hover:translate-y-1 size-full bg-background text-foreground flex items-center justify-center px-3 border border-transparent hover:border-foreground">
+      <div className="flex size-full cursor-pointer items-center justify-center border border-transparent bg-background px-3 text-foreground transition-all duration-300 hover:translate-x-1 hover:translate-y-1 hover:border-foreground">
         {label}
       </div>
     </Link>
@@ -48,13 +54,13 @@ const Navbar = () => {
   return (
     <div
       className={cn(
-        "h-[44px] shrink-0 flex items-center pad-x-page gap-8 font-sans sticky top-0 bg-background z-10 transition-all duration-300  border-[2px] border-foreground"
+        'pad-x-page sticky top-0 z-10 flex h-[44px] shrink-0 items-center gap-8 border-[2px] border-foreground bg-background font-sans transition-all duration-300',
       )}
     >
       <Logo />
 
-      <div className="flex-1 hidden md:flex justify-between lowercase  h-full items-center">
-        <div className="flex h-full divide-x-[2px] divide-foreground border-l-[2px] border-r-[2px]">
+      <div className="hidden h-full flex-1 items-center justify-between lowercase md:flex">
+        <div className="flex h-full divide-x-[2px] divide-foreground border-r-[2px] border-l-[2px]">
           {NAVBAR_ITEMS.map((item) =>
             item.disabled ? null : (
               <NavbarItem
@@ -65,10 +71,10 @@ const Navbar = () => {
                 disabled={item.disabled}
                 disabledMessage={item.disabledMessage}
               />
-            )
+            ),
           )}
         </div>
-        <div className="flex gap-2 group/dot">
+        <div className="group/dot flex gap-2">
           <Dot
             hoverElement={<IconArrowsDiagonal2 size={10} />}
             color="#29C73F"

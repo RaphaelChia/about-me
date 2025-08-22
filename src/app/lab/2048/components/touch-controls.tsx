@@ -34,7 +34,7 @@ const TouchControls = ({ showControls, onMove, ...props }: Props) => {
   return (
     <div
       className={cn(
-        'grid w-full grid-cols-3 gap-0 overflow-hidden rounded-lg border border-border md:hidden',
+        'mx-auto grid w-full max-w-[250px] grid-cols-3 gap-0 overflow-hidden rounded-lg border border-border md:hidden',
         showControls ? 'opacity-100' : 'pointer-events-none opacity-50',
       )}
       {...props}

@@ -18,11 +18,12 @@ import {
 import { cn } from '@/lib/utils';
 import { IconCheck, IconChevronDown } from '@tabler/icons-react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 type ContentItem = {
   title: string;
+  id: string;
   type: 'title' | 'link';
   underConstruction?: boolean;
   tooltip?: string;
@@ -38,15 +39,18 @@ type ContentItem = {
 const contentItems: ContentItem[] = [
   {
     type: 'title',
+    id: 'lab',
     title: 'Lab',
   },
   {
     type: 'link',
+    id: '2048',
     title: '2048',
     href: '/lab/2048',
   },
   {
     type: 'link',
+    id: 'chat',
     title: 'Wrong answers only',
     href: '/lab/chat',
     underConstruction: true,
@@ -72,7 +76,10 @@ const ContentsSidebarMobile = () => {
   const pn = usePathname();
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(pn.split('/').pop());
-
+  useEffect(() => {
+    setValue(pn.split('/').pop());
+  }, [pn]);
+  const router = useRouter();
   return (
     <div
       className="pad-x-page pad-y-page flex items-center pb-0 lg:hidden"
@@ -90,7 +97,8 @@ const ContentsSidebarMobile = () => {
             className="w-[200px] justify-between rounded-md bg-background"
           >
             {value
-              ? contentItems.find((content) => content.title === value)?.title
+              ? (contentItems.find((content) => content.title === value)
+                  ?.title ?? 'Select exercise...')
               : 'Select exercise...'}
             <IconChevronDown className="opacity-50" />
           </Button>
@@ -105,12 +113,12 @@ const ContentsSidebarMobile = () => {
                   if (content.type === 'link')
                     return (
                       <CommandItem
-                        key={content.title}
-                        value={content.title}
+                        key={content.id}
+                        value={content.id}
                         className="hover:bg-foreground-neutral hover:text-background"
-                        onSelect={(currentValue) => {
-                          setValue(currentValue === value ? '' : currentValue);
+                        onSelect={() => {
                           setOpen(false);
+                          router.push(content.href);
                         }}
                       >
                         {content.title}

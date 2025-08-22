@@ -163,7 +163,7 @@ export default function Home() {
         >
           stake.tensorplex.ai
         </LinkButton>
-        &nbsp; and more.
+        &nbsp;and more.
       </Sentence>
       <Sentence>
         Until today, i&apos;m still as hungry as ever for new challenges, to
@@ -171,7 +171,7 @@ export default function Home() {
         own Saas. Who knows? We&apos;ll see.
       </Sentence>
       <Sentence>
-        Drop me a message on&nbsp;
+        Drop me an email or a message on&nbsp;
         <LinkButton
           external
           className="inline-flex"
@@ -179,7 +179,7 @@ export default function Home() {
         >
           <div className="flex items-center gap-1">linkedin</div>
         </LinkButton>
-        &nbsp; to connect!
+        &nbsp;to connect!
       </Sentence>
       <div className="mt-12 text-end text-xs">last updated 27 july 2025</div>
     </main>
