@@ -2,6 +2,7 @@
 
 import Instructions from '@/app/lab/2048/components/instructions';
 import TouchControls from '@/app/lab/2048/components/touch-controls';
+import Two048Context from '@/app/lab/2048/components/two048-context';
 import Two048Tiles from '@/app/lab/2048/components/two048-tiles';
 import {
   addRandomTile,
@@ -14,10 +15,10 @@ import { Button } from '@/components/general/button';
 import KeyboardHint from '@/components/general/keyboard-hint';
 import useKeybindListener from '@/hooks/keyboard/use-keybind-listener';
 import { cn } from '@/lib/utils';
-import { IconCornerDownLeft } from '@tabler/icons-react';
+import { IconBook, IconCornerDownLeft } from '@tabler/icons-react';
 import { atom, useAtom } from 'jotai';
 import { atomWithStorage } from 'jotai/utils';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect } from 'react';
 
 // Jotai atoms
 const highScoreAtom = atomWithStorage('highScore', 0);
@@ -28,12 +29,13 @@ const gameStateAtom = atom({
   score: 0,
   gameOver: false,
   gameWon: false,
+  gameStarted: false,
 });
 
 const TwoZeroFourEight = () => {
   const [highScore, setHighScore] = useAtom(highScoreAtom);
   const [gameState, setGameState] = useAtom(gameStateAtom);
-  const [gameStarted, setGameStarted] = useState(false);
+  const gameStarted = gameState.gameStarted;
 
   // Start new game
   const startGame = useCallback(() => {
@@ -46,8 +48,8 @@ const TwoZeroFourEight = () => {
       score: 0,
       gameOver: false,
       gameWon: false,
+      gameStarted: true,
     });
-    setGameStarted(true);
   }, [setGameState]);
 
   // Move grid in different directions
@@ -143,6 +145,7 @@ const TwoZeroFourEight = () => {
           score: newScore,
           gameOver: isGameOver,
           gameWon: hasWon && !gameState.gameWon,
+          gameStarted: gameState.gameStarted,
         });
       }
     },
@@ -154,6 +157,7 @@ const TwoZeroFourEight = () => {
       gameState.gameWon,
       gameState.grid,
       setHighScore,
+      gameState.gameStarted,
     ],
   );
 
@@ -217,9 +221,18 @@ const TwoZeroFourEight = () => {
 
         {/* Scores, Controls */}
         <div className="mb-4 flex items-stretch gap-2 max-md:flex-col">
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1 max-md:flex-row">
+            <Two048Context>
+              <Button
+                className="h-[33px] w-full flex-1 rounded-lg text-sm"
+                variant={'inverted'}
+              >
+                <IconBook />
+                Impl
+              </Button>
+            </Two048Context>
             <Button
-              className="col-span-2 w-[100px] flex-1 text-sm"
+              className="h-[33px] w-full flex-1 rounded-lg text-sm"
               variant={'inverted'}
               onClick={startGame}
             >
@@ -236,7 +249,6 @@ const TwoZeroFourEight = () => {
                 </>
               )}
             </Button>
-            <div className="w-[100px] flex-1 bg-foreground"></div>
           </div>
           <div className="flex gap-2">
             <div className="min-w-20 p-2">
