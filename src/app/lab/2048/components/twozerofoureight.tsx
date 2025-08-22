@@ -1,7 +1,15 @@
 'use client';
 
 import Instructions from '@/app/lab/2048/components/instructions';
+import TouchControls from '@/app/lab/2048/components/touch-controls';
 import Two048Tiles from '@/app/lab/2048/components/two048-tiles';
+import {
+  addRandomTile,
+  arraysEqual,
+  checkGameOver,
+  initializeGrid,
+  moveRowLeft,
+} from '@/app/lab/2048/utils';
 import { Button } from '@/components/general/button';
 import { cn } from '@/lib/utils';
 import { atom, useAtom } from 'jotai';
@@ -18,89 +26,6 @@ const gameStateAtom = atom({
   gameOver: false,
   gameWon: false,
 });
-
-const CHANCE_OF_2 = 0.9;
-
-// Pure functions moved outside component
-const initializeGrid = () => {
-  return Array(4)
-    .fill(null)
-    .map(() => Array(4).fill(0));
-};
-
-const addRandomTile = (grid: number[][]) => {
-  const emptyCells = [];
-  for (let i = 0; i < 4; i++) {
-    for (let j = 0; j < 4; j++) {
-      if (grid[i][j] === 0) {
-        emptyCells.push([i, j]);
-      }
-    }
-  }
-
-  if (emptyCells.length > 0) {
-    const randomCell =
-      emptyCells[Math.floor(Math.random() * emptyCells.length)];
-    const newGrid = grid.map((row) => [...row]);
-    newGrid[randomCell[0]][randomCell[1]] = Math.random() < CHANCE_OF_2 ? 2 : 4;
-    return newGrid;
-  }
-  return grid;
-};
-
-const moveRowLeft = (row: number[]) => {
-  // Filter out zeros and move tiles left
-  let filteredRow = row.filter((val) => val !== 0);
-  let score = 0;
-
-  // Merge adjacent identical tiles
-  for (let i = 0; i < filteredRow.length - 1; i++) {
-    if (filteredRow[i] === filteredRow[i + 1]) {
-      filteredRow[i] *= 2;
-      score += filteredRow[i];
-      filteredRow[i + 1] = 0;
-    }
-  }
-
-  // Filter out zeros again after merging
-  filteredRow = filteredRow.filter((val) => val !== 0);
-
-  // Pad with zeros to maintain row length
-  while (filteredRow.length < 4) {
-    filteredRow.push(0);
-  }
-
-  return { row: filteredRow, score };
-};
-
-const arraysEqual = (arr1: number[], arr2: number[]) => {
-  return arr1.length === arr2.length && arr1.every((val, i) => val === arr2[i]);
-};
-
-const checkGameOver = (grid: number[][]) => {
-  // Check for empty cells
-  for (let i = 0; i < 4; i++) {
-    for (let j = 0; j < 4; j++) {
-      if (grid[i][j] === 0) return false;
-    }
-  }
-
-  // Check for possible merges horizontally
-  for (let i = 0; i < 4; i++) {
-    for (let j = 0; j < 3; j++) {
-      if (grid[i][j] === grid[i][j + 1]) return false;
-    }
-  }
-
-  // Check for possible merges vertically
-  for (let i = 0; i < 3; i++) {
-    for (let j = 0; j < 4; j++) {
-      if (grid[i][j] === grid[i + 1][j]) return false;
-    }
-  }
-
-  return true;
-};
 
 const TwoZeroFourEight = () => {
   const [highScore, setHighScore] = useAtom(highScoreAtom);
@@ -266,19 +191,20 @@ const TwoZeroFourEight = () => {
   }, [gameStarted, gameState.gameOver, moveGrid]);
 
   return (
-    <div className="flex w-full items-center justify-center gap-8 p-8 font-mono">
+    <div className="flex w-full items-center justify-center gap-8 p-8 font-mono max-lg:flex-col">
       <div
         className={cn(
-          'w-fit rounded-lg bg-white p-8 transition-shadow duration-500',
-          gameStarted && 'shadow-2xl',
+          'w-fit rounded-lg border border-transparent bg-white p-8 transition-all duration-500',
+          gameStarted &&
+            'translate-x-[6px] -translate-y-[6px] border-border shadow-button',
         )}
       >
-        {/* <h1 className="mb-4 text-center text-4xl font-bold text-gray-800">
-          2048
-        </h1> */}
+        <h1 className="mb-4 text-start text-4xl font-bold text-gray-800">
+          arrays[][]
+        </h1>
 
-        {/* Scores */}
-        <div className="mb-4 flex items-stretch gap-2">
+        {/* Scores, Controls */}
+        <div className="mb-4 flex items-stretch gap-2 max-md:flex-col">
           <div className="flex flex-col gap-1">
             <Button
               className="col-span-2 w-[100px] flex-1 text-sm"
@@ -289,18 +215,20 @@ const TwoZeroFourEight = () => {
             </Button>
             <div className="w-[100px] flex-1 bg-foreground"></div>
           </div>
-          <div className="min-w-20 p-2">
-            <div className="text-sm">Score</div>
-            <div className="text-xl font-bold">{gameState.score}</div>
-          </div>
-          <div className="min-w-20 p-2">
-            <div className="text-sm">High Score</div>
-            <div className="text-xl font-bold">{highScore}</div>
+          <div className="flex gap-2">
+            <div className="min-w-20 p-2">
+              <div className="text-sm">Score</div>
+              <div className="text-xl font-bold">{gameState.score}</div>
+            </div>
+            <div className="min-w-20 p-2">
+              <div className="text-sm">High Score</div>
+              <div className="text-xl font-bold">{highScore}</div>
+            </div>
           </div>
         </div>
 
         {/* Game Grid */}
-        <div className="grid size-[316px] grid-cols-4 gap-5 rounded-lg">
+        <div className="grid w-fit shrink-0 grid-cols-4 gap-5 rounded-lg">
           {gameState.grid.flat().map((value, index) => (
             <Two048Tiles key={index} value={value} />
           ))}
@@ -321,6 +249,7 @@ const TwoZeroFourEight = () => {
 
         {/* Controls */}
       </div>
+      <TouchControls showControls={gameStarted} onMove={moveGrid} />
       <Instructions />
     </div>
   );

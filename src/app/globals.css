@@ -3,7 +3,7 @@
 
 :root {
   --background: #ffffff;
-  --background-secondary: #d9d9d9;
+  --background-secondary: #eae7e7;
   --foreground: #151515;
   --foreground-secondary: #999;
   --foreground-neutral: #4a5565;
@@ -55,7 +55,7 @@ body {
 
 ::-webkit-scrollbar {
   width: 12px;
-  height: 8px;
+  height: 12px;
   padding-left: 2px;
   padding-right: 2px;
   background-color: var(--foreground-secondary);
