@@ -23,7 +23,7 @@ const string3 = 'YouCanDownloadMyResumeAtTheContactPagEE';
 
 export const CheckboxWindow = () => {
   const [scrollTop, setScrollTop] = useState(0);
-  const [containerWidth, setContainerWidth] = useState(480); // Default width
+  const [containerWidth, setContainerWidth] = useState(600); // Default width
   const containerRef = useRef<HTMLDivElement>(null);
   const [checkBoxStateBoolean, setCheckBoxStateBoolean] =
     useAtom(checkBoxStateAtom);
@@ -44,7 +44,7 @@ export const CheckboxWindow = () => {
     const resizeObserver = new ResizeObserver((entries) => {
       for (const entry of entries) {
         const { width } = entry.contentRect;
-        setContainerWidth(Math.min(width, 480));
+        setContainerWidth(Math.min(width, 600));
       }
     });
 
@@ -141,7 +141,7 @@ export const CheckboxWindow = () => {
       </div>
       <div
         ref={containerRef}
-        className="flex h-[300px] max-w-[480px] gap-0 overflow-y-scroll border"
+        className="flex h-[300px] max-w-[600px] gap-0 overflow-y-scroll border"
         onScroll={handleScroll}
         style={{
           height: CONTAINER_HEIGHT,
