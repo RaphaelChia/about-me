@@ -22,7 +22,6 @@ const string2 = 'FindMeAtRaphaelismeAtGmailDotCom';
 const string3 = 'YouCanDownloadMyResumeAtTheContactPagEE';
 
 export const CheckboxWindow = () => {
-  // const { width: screenWidth } = useScreenWidth();
   const [scrollTop, setScrollTop] = useState(0);
   const [containerWidth, setContainerWidth] = useState(480); // Default width
   const containerRef = useRef<HTMLDivElement>(null);
@@ -80,7 +79,7 @@ export const CheckboxWindow = () => {
       const res = unpackCheckboxesBase64(string, TOTAL_ITEMS);
       setCheckBoxStateBoolean(res);
     },
-    [],
+    [setCheckBoxStateBoolean],
   );
   return (
     <>
@@ -104,7 +103,7 @@ export const CheckboxWindow = () => {
           footer={
             <div className="flex flex-col gap-1">
               <span className="font-semibold">try it</span>
-              <div className="">
+              <div className="mb-1">
                 <Button
                   onClick={stringClickHandler}
                   data-string={string1}

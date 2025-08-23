@@ -17,11 +17,12 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
+import useLastPathname from '@/hooks/navigation/use-last-pathname';
 import { cn } from '@/lib/utils';
 import { IconCheck, IconChevronDown } from '@tabler/icons-react';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 type ContentItem = {
   title: string;
@@ -66,9 +67,15 @@ const contentItems: ContentItem[] = [
   },
 ];
 
-const LabContent = ({ content }: { content: ContentItem }) => {
+const LabContent = ({
+  content,
+  selected,
+}: {
+  content: ContentItem;
+  selected: boolean;
+}) => {
   if (content.type === 'title') {
-    return <div className="text-sm font-semibold">{content.title}</div>;
+    return <div className={cn('text-sm font-semibold')}>{content.title}</div>;
   }
   return (
     <div
@@ -82,7 +89,9 @@ const LabContent = ({ content }: { content: ContentItem }) => {
         {content.underConstruction ? (
           <span className="select-none">{content.title}</span>
         ) : (
-          <Link href={content.href}>{content.title}</Link>
+          <Link href={content.href} className={cn(selected && 'font-semibold')}>
+            {selected && '>'} {content.title}
+          </Link>
         )}
       </TooltipText>
     </div>
@@ -90,12 +99,8 @@ const LabContent = ({ content }: { content: ContentItem }) => {
 };
 
 const LabContentsSidebarMobile = () => {
-  const pn = usePathname();
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState(pn.split('/').pop());
-  useEffect(() => {
-    setValue(pn.split('/').pop());
-  }, [pn]);
+  const pathname = useLastPathname();
   const router = useRouter();
   return (
     <div
@@ -113,8 +118,8 @@ const LabContentsSidebarMobile = () => {
             aria-expanded={open}
             className="w-[200px] justify-between rounded-md bg-background"
           >
-            {value
-              ? (contentItems.find((content) => content.title === value)
+            {pathname
+              ? (contentItems.find((content) => content.id === pathname)
                   ?.title ?? 'Select exercise...')
               : 'Select exercise...'}
             <IconChevronDown className="opacity-50" />
@@ -148,7 +153,7 @@ const LabContentsSidebarMobile = () => {
                         <IconCheck
                           className={cn(
                             'ml-auto',
-                            value === content.title
+                            pathname === content.title
                               ? 'opacity-100'
                               : 'opacity-0',
                           )}
@@ -167,6 +172,7 @@ const LabContentsSidebarMobile = () => {
 };
 
 const LabContentsSidebar = () => {
+  const pathname = useLastPathname();
   return (
     <>
       <div className="pad-y-page pad-x-page flex min-h-(--content-height) w-[200px] shrink-0 flex-col gap-2 max-lg:hidden">
@@ -175,7 +181,11 @@ const LabContentsSidebar = () => {
         </div>
         <div className="pad-y-page sticky top-0 flex flex-col gap-2">
           {contentItems.map((item) => (
-            <LabContent key={`lab-${item.title}`} content={item} />
+            <LabContent
+              selected={pathname === item.id}
+              key={`lab-${item.title}`}
+              content={item}
+            />
           ))}
         </div>
       </div>

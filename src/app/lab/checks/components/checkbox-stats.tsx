@@ -7,7 +7,7 @@ const CheckboxStorageStats = () => {
           {/* Graph */}
           <div className="relative flex h-(--bar-height) w-full gap-1 px-4">
             <div className="absolute flex gap-1">
-              <div className="absolute right-0 bg-background/60 px-1 text-xs font-semibold">
+              <div className="absolute right-0 bg-background/60 px-1 text-xs font-semibold max-sm:hidden">
                 100%
               </div>
               <span className="absolute top-0 left-0 -translate-x-full translate-y-[-20%] text-3xl font-bold max-sm:text-xl">
@@ -25,7 +25,7 @@ const CheckboxStorageStats = () => {
               ))}
             </div>
             <div className="absolute flex gap-1">
-              <div className="absolute right-0 bg-background/60 px-1 text-xs font-semibold">
+              <div className="absolute right-0 bg-background/60 px-1 text-xs font-semibold max-sm:hidden">
                 25%
               </div>
               {Array.from({ length: Math.floor(TOTAL_BARS * 0.25) }).map(
