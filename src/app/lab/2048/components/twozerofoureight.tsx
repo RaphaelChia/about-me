@@ -233,7 +233,7 @@ const TwoZeroFourEight = () => {
             </Two048Context>
             <Button
               className="h-[33px] w-full flex-1 rounded-lg text-sm"
-              variant={'inverted'}
+              variant={'border'}
               onClick={startGame}
             >
               {gameStarted ? (

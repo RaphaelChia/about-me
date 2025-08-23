@@ -57,6 +57,13 @@ const contentItems: ContentItem[] = [
     href: '/lab/chat',
     underConstruction: true,
   },
+  {
+    type: 'link',
+    id: 'checks',
+    title: '10,000 checks',
+    href: '/lab/checks',
+    underConstruction: true,
+  },
 ];
 
 const LabContent = ({ content }: { content: ContentItem }) => {
