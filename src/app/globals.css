@@ -150,3 +150,8 @@ body {
     repeating-linear-gradient(45deg, #ffffff -6.25% 6.25%, #151515 0 18.75%);
   background-size: 200px 200px;
 }
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}

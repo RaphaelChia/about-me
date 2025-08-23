@@ -52,16 +52,16 @@ const contentItems: ContentItem[] = [
   },
   {
     type: 'link',
-    id: 'chat',
-    title: 'Wrong answers only',
-    href: '/lab/chat',
-    underConstruction: true,
-  },
-  {
-    type: 'link',
     id: 'checks',
     title: '10,000 checks',
     href: '/lab/checks',
+    underConstruction: false,
+  },
+  {
+    type: 'link',
+    id: 'chat',
+    title: 'Wrong answers only',
+    href: '/lab/chat',
     underConstruction: true,
   },
 ];

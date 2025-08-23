@@ -13,7 +13,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 // Configuration
 const BOX_DIMENSION = 24; // Size of each checkbox box
 const CONTAINER_HEIGHT = 300; // Height of the scrollable container
-const TOTAL_ITEMS = 1000; // You can adjust this number
+const TOTAL_ITEMS = 100000; // You can adjust this number
 
 const checkBoxStateAtom = atom<boolean[]>(Array(TOTAL_ITEMS).fill(false));
 
@@ -96,8 +96,7 @@ export const CheckboxWindow = () => {
             <div>visibleCount:{visibleCount}</div>
             <div>totalRows:{totalRows}</div>
             <div>itemsPerRow:{itemsPerRow}</div>
-            <div>containerWidth:{containerWidth}</div>
-            <div>totalCheckboxes:{TOTAL_ITEMS}</div>
+            <div>totalBoxes:{TOTAL_ITEMS.toLocaleString()}</div>
           </div>
         </ChecksDebugCard>
 
@@ -136,7 +135,7 @@ export const CheckboxWindow = () => {
           title="Base64 Storage String"
           className="w-full"
         >
-          <div className="w-full font-mono text-xs wrap-break-word">
+          <div className="no-scrollbar max-h-[100px] w-full overflow-y-auto font-mono text-xs wrap-break-word">
             {base64StorageString}
           </div>
         </ChecksDebugCard>
