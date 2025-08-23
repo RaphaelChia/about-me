@@ -53,7 +53,7 @@ const contentItems: ContentItem[] = [
   {
     type: 'link',
     id: 'checks',
-    title: '10,000 checks',
+    title: '100,000 checks',
     href: '/lab/checks',
     underConstruction: false,
   },
