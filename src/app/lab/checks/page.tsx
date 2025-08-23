@@ -1,11 +1,9 @@
-import { CheckboxRow } from '@/app/lab/checks/components/checkbox';
-import CheckboxStats from '@/app/lab/checks/components/checkbox-stats';
+import { CheckboxWindow } from '@/app/lab/checks/components/checkbox';
 
 const Page = () => {
   return (
-    <div className="pad-x-page pad-y-page w-full bg-red-100">
-      <CheckboxStats />
-      <CheckboxRow />
+    <div className="pad-x-page pad-y-page flex w-full flex-col gap-8 max-sm:flex-col-reverse">
+      <CheckboxWindow />
     </div>
   );
 };

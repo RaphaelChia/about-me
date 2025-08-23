@@ -1,62 +1,53 @@
-const TOTAL_BARS = 20;
-const BAR_WIDTH = 20;
-const BAR_HEIGHT = 32;
-const CheckboxStats = () => {
+const TOTAL_BARS = 16;
+const CheckboxStorageStats = () => {
   return (
-    <div className="flex items-center gap-3">
-      <div className="flex flex-col">
-        <span>Space Efficiency</span>
+    <div className="flex w-full items-center gap-3 [--bar-height:24px] [--bar-width:16px] max-sm:[--bar-height:16px] max-sm:[--bar-width:10px]">
+      <div className="flex w-full flex-col items-stretch">
+        <div className="flex items-center">
+          {/* Graph */}
+          <div className="relative flex h-(--bar-height) w-full gap-1 px-4">
+            <div className="absolute flex gap-1">
+              <div className="absolute right-0 bg-background/60 px-1 text-xs font-semibold">
+                100%
+              </div>
+              <span className="absolute top-0 left-0 -translate-x-full translate-y-[-20%] text-3xl font-bold max-sm:text-xl">
+                [
+              </span>
+              <span className="absolute top-0 right-0 translate-x-full translate-y-[-20%] text-3xl font-bold max-sm:text-xl">
+                ]
+              </span>
 
-        {/* Graph */}
-        <div
-          className="relative flex gap-1"
-          style={{
-            width: TOTAL_BARS * BAR_WIDTH + 4 * (TOTAL_BARS - 1),
-            height: BAR_HEIGHT,
-          }}
-        >
-          <div className="absolute flex gap-1">
-            {Array.from({ length: TOTAL_BARS }).map((_, index) => (
-              <div
-                style={{
-                  width: BAR_WIDTH,
-                  height: BAR_HEIGHT,
-                }}
-                key={index}
-                className="rounded-sm bg-foreground-neutral/30"
-              >
-                <div className="absolute right-0 bg-background px-1 text-xs font-semibold">
-                  901.8kb
-                </div>
+              {Array.from({ length: TOTAL_BARS }).map((_, index) => (
+                <div
+                  key={index}
+                  className="h-(--bar-height) w-(--bar-width) rounded-sm bg-foreground-neutral/50"
+                ></div>
+              ))}
+            </div>
+            <div className="absolute flex gap-1">
+              <div className="absolute right-0 bg-background/60 px-1 text-xs font-semibold">
+                25%
               </div>
-            ))}
-          </div>
-          <div className="absolute flex gap-1">
-            {Array.from({ length: 6 }).map((_, index) => (
-              <div
-                key={index}
-                style={{
-                  width: BAR_WIDTH,
-                  height: BAR_HEIGHT,
-                }}
-                className="rounded-sm bg-green-700"
-              >
-                <div className="absolute right-0 bg-background px-1 text-xs font-semibold">
-                  31.8kb
-                </div>
-              </div>
-            ))}
+              {Array.from({ length: Math.floor(TOTAL_BARS * 0.25) }).map(
+                (_, index) => (
+                  <div
+                    key={index}
+                    className="h-(--bar-height) w-(--bar-width) rounded-sm bg-green-700"
+                  ></div>
+                ),
+              )}
+            </div>
           </div>
         </div>
 
         {/* Legend */}
-        <div className="mt-4 flex items-center gap-8 text-xs">
+        <div className="mt-2 flex items-center gap-8 px-1 text-xs">
           <div className="flex items-center gap-1">
             <div className="h-4 w-2 shrink-0 rounded-[2px] bg-green-700"></div>
-            <div className="">Bit Storage</div>
+            <div className="">Base64 Storage</div>
           </div>
           <div className="flex items-center gap-1">
-            <div className="h-4 w-2 shrink-0 rounded-[2px] bg-foreground-neutral/30"></div>
+            <div className="h-4 w-2 shrink-0 rounded-[2px] bg-foreground-neutral/50"></div>
             <div className="">Boolean Storage</div>
           </div>
         </div>
@@ -65,4 +56,4 @@ const CheckboxStats = () => {
   );
 };
 
-export default CheckboxStats;
+export default CheckboxStorageStats;

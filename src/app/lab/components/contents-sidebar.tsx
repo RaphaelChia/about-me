@@ -169,8 +169,11 @@ const LabContentsSidebarMobile = () => {
 const LabContentsSidebar = () => {
   return (
     <>
-      <div className="pad-y-page pad-x-page flex h-[calc(100dvh-66px)] w-[200px] shrink-0 flex-col gap-2 max-lg:hidden">
-        <div className="sticky top-0 flex flex-col gap-2">
+      <div className="pad-y-page pad-x-page flex min-h-(--content-height) w-[200px] shrink-0 flex-col gap-2 max-lg:hidden">
+        <div className="text-sm leading-4">
+          My playground where I try to implement fun and whacky ideas.
+        </div>
+        <div className="pad-y-page sticky top-0 flex flex-col gap-2">
           {contentItems.map((item) => (
             <LabContent key={`lab-${item.title}`} content={item} />
           ))}

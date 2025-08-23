@@ -48,6 +48,11 @@
   --border: #9c9c9c;
   --page-px: 24px;
   --page-py: 36px;
+
+  /* Dynamic height variables */
+  --navbar-height: 44px;
+  --footer-height: 22px;
+  --content-height: calc(100dvh - var(--navbar-height) - var(--footer-height));
 }
 /* 
 @media (prefers-color-scheme: dark) {
