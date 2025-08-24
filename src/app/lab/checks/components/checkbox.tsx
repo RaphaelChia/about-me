@@ -19,7 +19,7 @@ const checkBoxStateAtom = atom<boolean[]>(Array(TOTAL_ITEMS).fill(false));
 
 const string1 = 'httpsphelldotdev';
 const string2 = 'FindMeAtRaphaelismeAtGmailDotCom';
-const string3 = 'YouCanDownloadMyResumeAtTheContactPagEE';
+const string3 = 'YouCanDownloadMyResumeAtTheContactPage';
 
 export const CheckboxWindow = () => {
   const [scrollTop, setScrollTop] = useState(0);
@@ -89,10 +89,10 @@ export const CheckboxWindow = () => {
         </ChecksDebugCard>
         <ChecksDebugCard className="w-full" title="Virtualization Debug">
           <div className="grid grid-cols-3 gap-1 max-sm:grid-cols-2">
-            <div>scrolltop:{scrollTop}</div>
+            <div>scrollTop:{scrollTop}</div>
             <div>visibleStart:{visibleStart}</div>
             <div>visibleEnd:{visibleEnd}</div>
-            <div>visibleCount:{visibleCount}</div>
+            <div>visibleRows:{visibleCount}</div>
             <div>totalRows:{totalRows}</div>
             <div>itemsPerRow:{itemsPerRow}</div>
             <div>totalBoxes:{TOTAL_ITEMS.toLocaleString()}</div>
@@ -103,7 +103,7 @@ export const CheckboxWindow = () => {
           footer={
             <div className="flex flex-col gap-1">
               <span className="font-semibold">try it</span>
-              <div className="mb-1">
+              <div className="mb-1 flex flex-wrap gap-1">
                 <Button
                   onClick={stringClickHandler}
                   data-string={string1}
@@ -139,39 +139,43 @@ export const CheckboxWindow = () => {
           </div>
         </ChecksDebugCard>
       </div>
-      <div
-        ref={containerRef}
-        className="flex h-[300px] max-w-[600px] gap-0 overflow-y-scroll border"
-        onScroll={handleScroll}
-        style={{
-          height: CONTAINER_HEIGHT,
-
-          minWidth: BOX_DIMENSION * 2, // Minimum 2 items
-        }}
-      >
+      <div>
+        <span className="font-mono max-sm:text-xs">
+          Check some (or all) boxes below. It&apos;s free.
+        </span>
         <div
-          className="relative flex flex-col gap-0"
+          ref={containerRef}
+          className="flex h-[300px] max-w-[600px] gap-0 overflow-y-scroll border"
+          onScroll={handleScroll}
           style={{
-            height: totalRows * BOX_DIMENSION,
-            width: itemsPerRow * BOX_DIMENSION,
+            height: CONTAINER_HEIGHT,
+            minWidth: BOX_DIMENSION * 2, // Minimum 2 items
           }}
         >
-          {Array.from({ length: visibleEnd - visibleStart }).map((_, idx) => {
-            const actualRowIndex = visibleStart + idx;
-            return (
-              <CheckboxRow
-                key={actualRowIndex}
-                rowIndex={actualRowIndex}
-                boxStartIndex={actualRowIndex * itemsPerRow}
-                boxPerRow={itemsPerRow}
-                totalBoxes={TOTAL_ITEMS}
-                style={{
-                  position: 'absolute',
-                  top: actualRowIndex * BOX_DIMENSION,
-                }}
-              />
-            );
-          })}
+          <div
+            className="relative flex flex-col gap-0"
+            style={{
+              height: totalRows * BOX_DIMENSION,
+              width: itemsPerRow * BOX_DIMENSION,
+            }}
+          >
+            {Array.from({ length: visibleEnd - visibleStart }).map((_, idx) => {
+              const actualRowIndex = visibleStart + idx;
+              return (
+                <CheckboxRow
+                  key={actualRowIndex}
+                  rowIndex={actualRowIndex}
+                  boxStartIndex={actualRowIndex * itemsPerRow}
+                  boxPerRow={itemsPerRow}
+                  totalBoxes={TOTAL_ITEMS}
+                  style={{
+                    position: 'absolute',
+                    top: actualRowIndex * BOX_DIMENSION,
+                  }}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     </>

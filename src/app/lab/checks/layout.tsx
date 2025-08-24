@@ -1,3 +1,6 @@
+import ChecksContext from '@/app/lab/checks/components/checks-context';
+import { Button } from '@/components/general/button';
+import { IconBook } from '@tabler/icons-react';
 import React from 'react';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -14,6 +17,15 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           bit-packing compression (75% memory reduction), viewport
           virtualization, and state management.
         </p>
+        <ChecksContext>
+          <Button
+            className="mt-4 h-[33px] w-fit flex-1 rounded-lg text-sm"
+            variant={'inverted'}
+          >
+            <IconBook />
+            Impl
+          </Button>
+        </ChecksContext>
       </div>
       {children}
     </div>

@@ -1,36 +1,36 @@
-"use client";
-import Logo from "@/components/logo";
-import Hamburger from "@/components/navbar/hamburger";
-import { NAVBAR_ITEMS } from "@/components/navbar/navbar";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+'use client';
+
+import Logo from '@/components/logo';
+import Hamburger from '@/components/navbar/hamburger';
+import { NAVBAR_ITEMS } from '@/components/navbar/navbar';
+import { cn } from '@/lib/utils';
+import Link from 'next/link';
+import { useCallback, useEffect, useState } from 'react';
 
 const MobileNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const handleClickOutside = useCallback((e: MouseEvent) => {
     if (
       e.target instanceof HTMLElement &&
-      !e.target.closest(".mobile-navbar")
+      !e.target.closest('.mobile-navbar')
     ) {
       setIsOpen(false);
     }
   }, []);
   useEffect(() => {
-    document.addEventListener("click", handleClickOutside);
+    document.addEventListener('click', handleClickOutside);
     return () => {
-      document.removeEventListener("click", handleClickOutside);
+      document.removeEventListener('click', handleClickOutside);
     };
   }, [handleClickOutside]);
 
   const handleOpenClick = useCallback(() => {
     setIsOpen((prev) => !prev);
-    console.log("onclicked called.", isOpen);
   }, []);
   return (
     <>
       <Hamburger
-        className="max-md:flex hidden z-10 ml-auto cursor-pointer mobile-navbar"
+        className="mobile-navbar z-10 ml-auto hidden cursor-pointer max-md:flex"
         open={isOpen}
         onClick={handleOpenClick}
       />
@@ -38,31 +38,31 @@ const MobileNavbar = () => {
       {
         <div
           className={cn(
-            "hidden max-md:flex bg-background border-b-[2px] border-foreground fixed top-0 left-0 w-full flex-col transition-all duration-500",
-            isOpen ? "translate-y-0" : "-translate-y-full"
+            'fixed top-0 left-0 hidden w-full flex-col border-b-[2px] border-foreground bg-background transition-all duration-500 max-md:flex',
+            isOpen ? 'translate-y-0' : '-translate-y-full',
           )}
         >
-          <div className="pad-x-page h-[44px] flex items-center">
+          <div className="pad-x-page flex h-[44px] items-center">
             <Logo />
           </div>
           {NAVBAR_ITEMS.map((item) => (
             <div
               key={item.label}
-              className="h-[70px] flex items-center pad-x-page justify-center font-black text-3xl uppercase font-sans relative overflow-hidden"
+              className="pad-x-page relative flex h-[70px] items-center justify-center overflow-hidden font-sans text-3xl font-black uppercase"
             >
               <Link
                 className={cn(
-                  "peer w-full h-full text-center z-10 flex items-center justify-center text-background mix-blend-difference",
-                  item.disabled && "opacity-50 pointer-events-none"
+                  'peer z-10 flex h-full w-full items-center justify-center text-center text-background mix-blend-difference',
+                  item.disabled && 'pointer-events-none opacity-50',
                 )}
                 href={item.href}
               >
                 {item.label}&nbsp;
-                <span className="text-sm ml-3">
-                  {item.disabled ? item.disabledMessage ?? "coming soon" : ""}
+                <span className="ml-3 text-sm">
+                  {item.disabled ? (item.disabledMessage ?? 'coming soon') : ''}
                 </span>
               </Link>
-              <div className="-translate-x-full peer-hover:translate-x-0 w-full h-full bg-foreground absolute top-0 left-0 transition-all duration-500 ease-out">
+              <div className="absolute top-0 left-0 h-full w-full -translate-x-full bg-foreground transition-all duration-500 ease-out peer-hover:translate-x-0">
                 &nbsp;
               </div>
             </div>

@@ -15,7 +15,7 @@ const Two048Context = ({ children }: { children: React.ReactNode }) => {
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent>
         <DialogTitle>Implementation </DialogTitle>
-        <div>
+        <div className="text-justify max-sm:text-xs">
           2048 core concept is simple: <strong>Array Manipulation.</strong>
           <br />
           In my implementation, there&apos;s only 1 function to move rows to the

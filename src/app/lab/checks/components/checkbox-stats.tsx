@@ -26,9 +26,9 @@ const CheckboxStorageStats = () => {
             </div>
             <div className="absolute flex gap-1">
               <div className="absolute right-0 bg-background/60 px-1 text-xs font-semibold max-sm:hidden">
-                25%
+                ~16.7%
               </div>
-              {Array.from({ length: Math.floor(TOTAL_BARS * 0.25) }).map(
+              {Array.from({ length: Math.ceil(TOTAL_BARS * 0.1666) }).map(
                 (_, index) => (
                   <div
                     key={index}
