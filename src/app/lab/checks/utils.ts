@@ -11,8 +11,16 @@ export function packCheckboxesBase64(bools: boolean[]): string {
     }
   }
 
-  // Convert buffer → Base64
-  return btoa(String.fromCharCode(...buffer));
+  // Convert buffer → Base64 in chunks to avoid call stack size exceeded
+  const CHUNK_SIZE = 8192; // Safe chunk size
+  let binaryString = '';
+
+  for (let i = 0; i < buffer.length; i += CHUNK_SIZE) {
+    const chunk = buffer.subarray(i, i + CHUNK_SIZE);
+    binaryString += String.fromCharCode(...chunk);
+  }
+
+  return btoa(binaryString);
 }
 
 // Unpack Base64 back into booleans

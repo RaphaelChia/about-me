@@ -13,7 +13,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 // Configuration
 const BOX_DIMENSION = 24; // Size of each checkbox box
 const CONTAINER_HEIGHT = 300; // Height of the scrollable container
-const TOTAL_ITEMS = 100000; // You can adjust this number
+const TOTAL_ITEMS = 1000000; // You can adjust this number
 
 const checkBoxStateAtom = atom<boolean[]>(Array(TOTAL_ITEMS).fill(false));
 
@@ -35,7 +35,7 @@ export const CheckboxWindow = () => {
   // Virtualization calculations
   const visibleStart = Math.floor(scrollTop / BOX_DIMENSION);
   const visibleCount = Math.ceil(CONTAINER_HEIGHT / BOX_DIMENSION) + 1;
-  const visibleEnd = Math.min(visibleStart + visibleCount, totalRows);
+  const visibleEnd = Math.min(visibleStart + visibleCount - 1, totalRows);
 
   // ResizeObserver to track container width changes
   useEffect(() => {

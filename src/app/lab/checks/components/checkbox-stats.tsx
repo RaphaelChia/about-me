@@ -1,7 +1,7 @@
 const TOTAL_BARS = 16;
 const CheckboxStorageStats = () => {
   return (
-    <div className="flex w-full items-center gap-3 [--bar-height:24px] [--bar-width:16px] max-sm:[--bar-height:16px] max-sm:[--bar-width:10px]">
+    <div className="flex w-full items-center gap-3 py-1 [--bar-height:24px] [--bar-width:16px] max-sm:[--bar-height:16px] max-sm:[--bar-width:10px]">
       <div className="flex w-full flex-col items-stretch">
         <div className="flex items-center">
           {/* Graph */}
