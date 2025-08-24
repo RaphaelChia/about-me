@@ -7,7 +7,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <span className="font-mono text-3xl font-bold">
           virtualization, compression, checkboxes.
         </span>
-        <p className="font-mono text-sm text-foreground-neutral">
+        <p className="font-mono text-sm text-foreground-neutral max-md:text-xs">
           There&apos;s a 100,000 checkboxes. The goal is to simulate large
           number of items, manage their states, and come up with a more
           efficient storing technique to save the large number of states.
