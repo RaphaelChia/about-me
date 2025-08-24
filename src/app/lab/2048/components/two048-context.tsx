@@ -7,11 +7,19 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
-import React from 'react';
+import useKeybindListener from '@/hooks/keyboard/use-keybind-listener';
+import React, { useState } from 'react';
 
 const Two048Context = ({ children }: { children: React.ReactNode }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  useKeybindListener({
+    targetKey: 'i',
+    callback: () => {
+      setIsOpen((prev) => !prev);
+    },
+  });
   return (
-    <Dialog>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent>
         <DialogTitle>Implementation </DialogTitle>
