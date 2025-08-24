@@ -15,7 +15,7 @@ const projects: Project[] = [
     projectTitle: 'backprop',
     desc: 'A trading terminal for the Bittensor ecosystem, to abstract the complexities of actually trading on the network',
     stack:
-      'React, Nextjs, TailwindCSS, polkadotJS, viem, ethersjs nodejs, redis, prisma, recharts, pm2, docker, python, fastapi, DeepseekV3',
+      'React, Nextjs, TailwindCSS, PolkadotJS, Viem, Wagmi, Ethersjs, Nodejs, Redis, Prisma, Recharts, PM2, Docker, Python, FastAPI, DeepseekV3',
     builtYear: '2025',
     challenges:
       'Balancing the UX of a trading terminal with the complexity of the trading logic, ensuring money values are transported correctly, ensuring clean re-renders in a page that has  3k LOC, selective caching',
@@ -32,15 +32,16 @@ const projects: Project[] = [
     projectHeader: 'reskinning a staking dApp.',
     projectTitle: 'Tensorplex Stake',
     desc: 'Web interface to interact with Bittensor and Ethereum network, to stake, bridge, and accrue rewards',
-    stack: 'React, Nextjs, html, css, mapbox',
+    stack:
+      'React, Nextjs, Html, Css, Ethersjs, Viem, PolkadotJS, Wagmi, Tailwindcss',
     builtYear: '2024',
     challenges:
       'Custom wallet and authentication setup, integration with multiple chains, good UX on an api intensive input-based interface',
     lessons:
-      "don't attempt to build a storybook if your application team consist of 1 person",
+      "Don't attempt to build a storybook if your application team consist of 1 person",
     url: 'stake.tensorplex.ai',
     projectRole:
-      'frontend engineer, reskin, bridging interface, points program and leaderboard feature',
+      'Frontend engineer, reskin, bridging interface, points program and leaderboard feature',
     highlights: '1100+ unique wallet users took part in referral program',
     showcaseImage: stakeTplxImages,
   },
@@ -49,7 +50,7 @@ const projects: Project[] = [
     projectTitle: 'HapiGenes',
     desc: "A project done for my mum's DNA whitelabelling business. This is a web application that integrates with whitelabelled API to serve a fuss free DNA Kit testing service to users",
     stack:
-      'React, Nextjs, next Server Actions, supabase, nextAuth, tailwindcss, React-hook-form',
+      'React, Nextjs, Server Actions, Supabase, NextAuth, Tailwindcss, React-hook-form',
     builtYear: '2025',
     projectRole: 'Sole developer',
     challenges:
@@ -76,7 +77,7 @@ const projects: Project[] = [
     projectHeader: 'My Hello World.',
     projectTitle: 'canpark',
     desc: 'Search for parking lots, anywhere in singapore',
-    stack: 'React, Nextjs, html, css, mapbox',
+    stack: 'React, Nextjs, Html, Css, Mapbox',
     builtYear: '2021',
     challenges: 'Creating a responsive UI, integrating 3rd party apis',
     lessons: "Just start coding, you'll figure it out",
