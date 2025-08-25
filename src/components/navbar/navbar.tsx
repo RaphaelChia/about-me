@@ -21,15 +21,15 @@ export const NAVBAR_ITEMS: NAVBAR_ITEM[] = [
     disabled: false,
   },
   {
-    label: 'contact',
-    labelSecondary: 'contact',
-    href: '/contact',
-    disabled: false,
-  },
-  {
     label: 'lab',
     labelSecondary: 'lab',
     href: '/lab/2048',
+    disabled: false,
+  },
+  {
+    label: 'contact',
+    labelSecondary: 'contact',
+    href: '/contact',
     disabled: false,
   },
 ];

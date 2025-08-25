@@ -66,12 +66,18 @@ export default function Home() {
           <SentenceEmoji emoji="🇸🇬">singaporean</SentenceEmoji>
           <SentenceEmoji emoji="📍">singapore</SentenceEmoji>
           <SentenceEmoji emoji="💼">fullstack engineer </SentenceEmoji>
-          <div className="mt-auto flex gap-[1px] font-bold tracking-widest">
+          <div className="mt-auto flex flex-wrap gap-[1px] font-bold tracking-widest">
             <LinkButton
               className="bg-foreground p-1 text-background hover:bg-background hover:text-foreground"
               href="/projects"
             >
               projects
+            </LinkButton>
+            <LinkButton
+              className="bg-foreground p-1 text-background hover:bg-background hover:text-foreground"
+              href="/lab"
+            >
+              lab
             </LinkButton>
             <LinkButton
               className="bg-foreground px-1 text-background hover:bg-background hover:text-foreground"
