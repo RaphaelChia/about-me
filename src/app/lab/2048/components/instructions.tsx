@@ -1,6 +1,6 @@
 const Instructions = () => {
   return (
-    <div className="text-center text-sm text-foreground-neutral">
+    <div className="px-2 text-center text-sm text-foreground-neutral">
       <p className="max-md:hidden">
         Use <strong>WASD</strong> or <strong>Arrow Keys</strong> to move tiles
       </p>

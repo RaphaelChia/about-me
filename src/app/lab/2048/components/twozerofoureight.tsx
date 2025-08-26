@@ -1,5 +1,7 @@
 'use client';
 
+import GameOver from '@/app/lab/2048/components/game-over';
+import GameWon from '@/app/lab/2048/components/game-won';
 import Instructions from '@/app/lab/2048/components/instructions';
 import TouchControls from '@/app/lab/2048/components/touch-controls';
 import Two048Context from '@/app/lab/2048/components/two048-context';
@@ -27,7 +29,7 @@ const gameStateAtom = atom({
     .fill(null)
     .map(() => Array(4).fill(0)),
   score: 0,
-  gameOver: false,
+  gameOver: true,
   gameWon: false,
   gameStarted: false,
 });
@@ -207,10 +209,10 @@ const TwoZeroFourEight = () => {
   }, [gameStarted, gameState.gameOver, moveGrid]);
 
   return (
-    <div className="flex w-full items-center justify-center gap-8 p-8 font-mono max-lg:flex-col">
+    <div className="relative flex w-full items-center justify-center gap-8 p-8 font-mono max-lg:flex-col">
       <div
         className={cn(
-          'w-fit shrink-0 rounded-lg border border-transparent bg-white p-8 transition-all duration-500',
+          'relative w-fit shrink-0 rounded-lg border border-transparent bg-white p-8 transition-all duration-500',
           gameStarted &&
             'translate-x-[6px] -translate-y-[6px] border-border shadow-button',
         )}
@@ -269,24 +271,15 @@ const TwoZeroFourEight = () => {
           ))}
         </div>
 
-        {/* Game Status Messages */}
-        {gameState.gameWon && (
-          <div className="mb-4 rounded bg-green-100 p-3 text-center font-semibold text-green-800">
-            🎉 You reached 2048! You won! 🎉
-          </div>
-        )}
-
-        {gameState.gameOver && (
-          <div className="mb-4 rounded bg-red-100 p-3 text-center font-semibold text-red-800">
-            Game Over! No more moves available.
-          </div>
-        )}
-
         {/* Controls */}
       </div>
       <TouchControls showControls={gameStarted} onMove={moveGrid} />
-      <div className="flex flex-col gap-8">
+      <div className="relative flex h-full flex-col justify-center gap-8">
         <Instructions />
+
+        {/* Game Status Messages */}
+        {gameState.gameWon && <GameWon startGame={startGame} />}
+        {gameState.gameOver && <GameOver startGame={startGame} />}
         {/* <Two048Context /> */}
       </div>
     </div>
