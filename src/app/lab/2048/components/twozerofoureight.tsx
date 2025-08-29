@@ -29,7 +29,7 @@ const gameStateAtom = atom({
     .fill(null)
     .map(() => Array(4).fill(0)),
   score: 0,
-  gameOver: true,
+  gameOver: false,
   gameWon: false,
   gameStarted: false,
 });
