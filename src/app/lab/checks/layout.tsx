@@ -14,7 +14,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           Interactive demo of a <strong>million</strong> checkboxes showcasing
           smooth scrolling through massive datasets while monitoring real-time
           performance metrics and storage efficiency. Made possible with
-          bit-packing compression (75% memory reduction), viewport
+          bit-packing compression (~84% memory reduction), viewport
           virtualization, and state management.
         </p>
         <ChecksContext>
