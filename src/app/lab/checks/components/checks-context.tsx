@@ -13,9 +13,8 @@ import React, { useState } from 'react';
 
 const BIT_PACKING_EXAMPLE = `//Example
 24 checkboxes: 1000011 01101101 10110100 //24 bytes
-raw bytes: [131, 109, 180] //3 bytes
-b64 encoding chunks: 10000 110110 110110 110100
-b64 representation: http //4 bytes
+b64 chunks: 10000(h) 110110(t) 110110(t) 110100(p)
+b64 representation: 'http' //4 bytes
 `;
 
 const ChecksContext = ({ children }: { children: React.ReactNode }) => {

@@ -129,7 +129,7 @@ const LabContentsSidebarMobile = () => {
           <Command>
             <CommandInput placeholder="Search exercise" className="h-9" />
             <CommandList>
-              <CommandEmpty>No framework found.</CommandEmpty>
+              <CommandEmpty>No exercise found.</CommandEmpty>
               <CommandGroup>
                 {contentItems.map((content) => {
                   if (content.type === 'link')

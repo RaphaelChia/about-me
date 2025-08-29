@@ -10,7 +10,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <span className="font-mono text-3xl font-bold">
           virtualization, compression, checkboxes.
         </span>
-        <p className="font-mono text-sm text-foreground-neutral max-md:text-xs">
+        <p className="max-w-4xl font-mono text-sm text-foreground-neutral max-md:text-xs">
           Interactive demo of a <strong>million</strong> checkboxes showcasing
           smooth scrolling through massive datasets while monitoring real-time
           performance metrics and storage efficiency. Made possible with
