@@ -8,7 +8,7 @@ const Page = () => {
       <LinkButton
         external
         className="inline-block"
-        href="https://backprop.finance"
+        href="https://linkedin.com/in/raphaelchia"
       >
         Let me know
       </LinkButton>{' '}
