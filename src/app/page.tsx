@@ -75,7 +75,7 @@ export default function Home() {
             </LinkButton>
             <LinkButton
               className="bg-foreground p-1 text-background hover:bg-background hover:text-foreground"
-              href="/lab"
+              href="/lab/2048"
             >
               lab
             </LinkButton>
