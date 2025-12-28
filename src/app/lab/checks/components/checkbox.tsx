@@ -89,7 +89,7 @@ export const CheckboxWindow = () => {
         </ChecksDebugCard>
         <ChecksDebugCard className="w-full" title="Virtualization Debug">
           <div className="grid grid-cols-3 gap-1 max-sm:grid-cols-2">
-            <div>scrollTop:{scrollTop}</div>
+            <div>scrollTop:{Math.floor(scrollTop)}</div>
             <div>visibleStart:{visibleStart}</div>
             <div>visibleEnd:{visibleEnd}</div>
             <div>visibleRows:{visibleCount}</div>

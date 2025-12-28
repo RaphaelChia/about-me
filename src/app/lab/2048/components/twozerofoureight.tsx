@@ -16,14 +16,13 @@ import {
 import { Button } from '@/components/general/button';
 import KeyboardHint from '@/components/general/keyboard-hint';
 import useKeybindListener from '@/hooks/keyboard/use-keybind-listener';
+import { highScoreAtom } from '@/lib/atoms';
 import { cn } from '@/lib/utils';
 import { IconBook, IconCornerDownLeft } from '@tabler/icons-react';
 import { atom, useAtom } from 'jotai';
-import { atomWithStorage } from 'jotai/utils';
 import { useCallback, useEffect } from 'react';
 
 // Jotai atoms
-const highScoreAtom = atomWithStorage('highScore', 0);
 const gameStateAtom = atom({
   grid: Array(4)
     .fill(null)
