@@ -102,8 +102,8 @@ export default function Home() {
         software development lifecycle.
       </Sentence>
       <Sentence>
-        When I graduated, I served my scholarship&apos;s 3 year bond. Unsure
-        what to specialize in, I decided to go into DevOps.&nbsp;
+        When I graduated, I started to serve my scholarship&apos;s 3 year bond.
+        Unsure what to specialize in, I decided to go into DevOps.&nbsp;
         <TooltipText
           underline
           underlinePattern="dotted"
