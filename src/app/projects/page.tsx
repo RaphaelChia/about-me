@@ -39,7 +39,7 @@ const projects: Project[] = [
       'Custom wallet and authentication setup, integration with multiple chains, good UX on an api intensive input-based interface',
     lessons:
       "Don't attempt to build a storybook if your application team consist of 1 person",
-    url: 'stake.tensorplex.ai',
+    url: 'https://stake.tensorplex.ai/bridge',
     projectRole:
       'Frontend engineer, reskin, bridging interface, points program and leaderboard feature',
     highlights: '1100+ unique wallet users took part in referral program',
