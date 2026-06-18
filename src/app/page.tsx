@@ -90,91 +90,24 @@ export default function Home() {
       </div>
       <div className="my-4"></div>
       <Sentence>Hey 👋</Sentence>
-      <Sentence>Welcome to a tldr of my technical journey.</Sentence>
       <Sentence>
-        It was 2018 when I enrolled into Singapore Institute of Technology to
-        pursue a degree in Software Engineering. I was fortunate enough to
-        qualify for a company sponsored scholarship and was able to study for
-        free.
+        Five years across NCS, Telepathy Labs, and Tensorplex Labs — internal
+        office management apps, stripping out process inefficiencies one at a
+        time, and a spot trading dApp that eventually found a buyer.
       </Sentence>
       <Sentence>
-        The degree was extremely hands-on and I learnt a lot about the entire
-        software development lifecycle.
+        Now I&apos;m a customer-facing solutions engineer at Mysten Labs,
+        representing Sui across APAC — working closest to partners on POCs,
+        smart contracts, and full stack architecture.
       </Sentence>
       <Sentence>
-        When I graduated, I started to serve my scholarship&apos;s 3 year bond.
-        Unsure what to specialize in, I decided to go into DevOps.&nbsp;
-        <TooltipText
-          underline
-          underlinePattern="dotted"
-          hoverContents={
-            <div className="max-w-[220px]">
-              It was not. I was half doing pre-sale, half doing solution
-              architecting, and barely any devops.
-            </div>
-          }
-        >
-          <div className="inline-flex">It was fine.</div>
-        </TooltipText>
+        Talks, hackathons, supply chain finance, mobile integrations — putting
+        our stack in front of builders and institutions that weren&apos;t
+        looking for us yet.
       </Sentence>
       <Sentence>
-        I was able to pick up a few things here and there, but something did not
-        click. I thought it was the organization&apos;s comfortable pace.
-      </Sentence>
-      <Sentence>
-        After much consideration, a major decision was made to terminate my bond
-        early
-        <TooltipText
-          hoverContents={<div>The sum was 130% my school fees :(</div>}
-        >
-          <span>(💸💸)</span>
-        </TooltipText>
-        &nbsp; and moved to yet another DevOps role, but this time, at a
-        startup.
-      </Sentence>
-      <Sentence>
-        I loved it. I grew a lot, technically and holistically. Learnt how to
-        move fast, be independent, take responsibility, and to work in a team.
-      </Sentence>
-      <Sentence>
-        With Telepathy Labs,&nbsp;
-        <em className="font-bold">
-          I began making more decisions that came with consequences
-        </em>
-        . This is where true growth happened for me.
-      </Sentence>
-      <Sentence>
-        It was great, except something still did not click. I started to
-        question my passion. I restarted fullstack development on the side.
-      </Sentence>
-      <Sentence>It finally clicked.</Sentence>
-      <Sentence>
-        Realised that my passion lies in coding and bringing ideas to life.
-      </Sentence>
-      <Sentence>
-        Everything else was history. I moved on to a fullstack (frontend heavy)
-        role with Tensorplex Labs. I owned my products, designed and built&nbsp;
-        <LinkButton
-          external
-          className="inline-flex"
-          href="https://backprop.finance"
-        >
-          backprop.finance
-        </LinkButton>
-        , reskinned&nbsp;
-        <LinkButton
-          external
-          className="inline-flex"
-          href="https://stake.tensorplex.ai"
-        >
-          stake.tensorplex.ai
-        </LinkButton>
-        &nbsp;and more.
-      </Sentence>
-      <Sentence>
-        Until today, i&apos;m still as hungry as ever for new challenges, to
-        gain more experience, build more solutions, maybe even start shipping my
-        own Saas. Who knows? We&apos;ll see.
+        Still hungry for new challenges, maybe even shipping my own SaaS one
+        day. Who knows? We&apos;ll see.
       </Sentence>
       <Sentence>
         Drop me an email or a message on&nbsp;
@@ -187,7 +120,7 @@ export default function Home() {
         </LinkButton>
         &nbsp;to connect!
       </Sentence>
-      <div className="mt-12 text-end text-xs">last updated 27 july 2025</div>
+      <div className="mt-12 text-end text-xs">last updated 18 june 2026</div>
     </main>
   );
 }
