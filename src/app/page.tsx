@@ -62,10 +62,10 @@ export default function Home() {
           >
             <div className="text-6xl font-bold">Raphael Chia</div>
           </TooltipText>
-          <SentenceEmoji emoji="⏳">29 y.o </SentenceEmoji>
+          <SentenceEmoji emoji="⏳">30 y.o </SentenceEmoji>
           <SentenceEmoji emoji="🇸🇬">singaporean</SentenceEmoji>
           <SentenceEmoji emoji="📍">singapore</SentenceEmoji>
-          <SentenceEmoji emoji="💼">fullstack engineer </SentenceEmoji>
+          <SentenceEmoji emoji="💼">Solutions engineer </SentenceEmoji>
           <div className="mt-auto flex flex-wrap gap-[1px] font-bold tracking-widest">
             <LinkButton
               className="bg-foreground p-1 text-background hover:bg-background hover:text-foreground"
