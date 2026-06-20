@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.19)  20 JUN 2026 07:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.19)  20 JUN 2026 08:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -347,7 +347,7 @@ Package microtype Info: No adjustment of character kerning.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 68.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 75.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -384,18 +384,18 @@ Package rerunfilecheck Info: File `raphael-fde.out' has not changed.
 (rerunfilecheck)             Checksum: 16B27507101EACC73A2CEA0E21393F30;322.
  ) 
 Here is how much of TeX's memory you used:
- 11998 strings out of 467525
- 189396 string characters out of 5418982
- 666227 words of memory out of 5000000
- 40706 multiletter control sequences out of 15000+600000
- 669836 words of font info for 103 fonts, out of 8000000 for 9000
+ 11996 strings out of 467525
+ 189315 string characters out of 5418982
+ 664227 words of memory out of 5000000
+ 40703 multiletter control sequences out of 15000+600000
+ 669477 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,5n,79p,1008b,447s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on raphael-fde.pdf (1 page, 128539 bytes).
+Output written on raphael-fde.pdf (1 page, 125834 bytes).
 PDF statistics:
- 66 PDF objects out of 1000 (max. 8388607)
- 49 compressed objects within 1 object stream
+ 63 PDF objects out of 1000 (max. 8388607)
+ 47 compressed objects within 1 object stream
  5 named destinations out of 1000 (max. 500000)
- 28697 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 26649 words of extra memory for PDF output out of 29859 (max. 10000000)
 
