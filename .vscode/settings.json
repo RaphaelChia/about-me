@@ -18,5 +18,28 @@
   },
   "[json]": {
     "editor.tabSize": 2
-  }
+  },
+  "latex-workshop.latex.env": {
+    "PATH": "/Library/TeX/texbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+  },
+  "latex-workshop.latex.outDir": "%DIR%",
+  "latex-workshop.latex.build.forceRecipeUsage": true,
+  "latex-workshop.latex.recipe.default": "first",
+  "latex-workshop.latex.watch.delay": 500,
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk-clean-build",
+      "command": "/bin/sh",
+      "args": [
+        "-c",
+        "export PATH='/Library/TeX/texbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin' && cd '%DIR%' && /Library/TeX/texbin/latexmk -C '%DOCFILE%.tex' && exec /Library/TeX/texbin/latexmk -pdf -interaction=nonstopmode -f '%DOCFILE%.tex'"
+      ]
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk (clean + pdf)",
+      "tools": ["latexmk-clean-build"]
+    }
+  ]
 }
