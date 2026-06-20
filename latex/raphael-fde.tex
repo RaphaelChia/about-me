@@ -65,45 +65,35 @@
 
 \vspace{-0.35em}
 \begin{center}
-\textit{Software engineer with 5+ years embedding with client teams and shipping for live ecosystem users — technical POC on Sui integrations from discovery through rollout, indexer design from requirements to sign-off, and a Bittensor dapp driving \$4.8m daily volume with feedback from a 21k-user community.}
+\textit{Software engineer with 5+ years embedding with client teams and shipping production systems — architected a high-throughput Rust deposit indexer matching against 75M addresses at sub-10\,\textmu s latency with transactional outbox delivery, led Sui integrations end-to-end as technical POC, and shipped a Bittensor trading exchange driving \$4.8M daily volume.}
 \end{center}
 
 \section{PROFESSIONAL EXPERIENCE}
 
 \role{Sui Foundation}{Singapore}{Solutions Engineer}{November 2025--Present}
 \begin{itemize}
-  \item Embed with client teams as their technical point of contact for Sui integrations — gather requirements, shape Sui-native architecture, and ship integration work alongside them from discovery through production rollout.
-  \item As technical POC for the indexer portion of a partner payment solution, led fact-finding and requirements gathering, designed matching against up to 75 million wallet addresses at Sui's ~4 cps (50--5,000 tx each), benchmarked in-memory 5,000-vs-75M lookups at 150 microseconds over 100 runs, presented architecture and results for greenlight, and implemented in production.
-  \item Led bootcamps and hackathons as a hands-on technical instructor, walking builders through Sui integration patterns and onboarding new teams into the ecosystem.
+  \item Embedded with a partner team as technical POC for a Sui-native payment integration — led discovery, shaped architecture, and shipped the full solution alongside their engineers from requirements through production.
+  \item As technical POC for the indexer portion of a partner payment solution, led requirements gathering, architected and built a Rust deposit indexer (sui-indexer-alt-framework, gRPC) matching deposits against \textbf{75M wallet addresses} in a Kafka-sourced in-memory HashSet (\textbf{$\sim$27\,GB RAM}), and presented architecture and benchmarks for stakeholder greenlight. Designed a transactional outbox decoupling ingestion from Kafka latency with at-least-once delivery. Benchmarked \textbf{500-key lookups at 7.3\,\textmu s} (1,400$\times$ under gate); cold-boot at \textbf{121K\,msg/s}. Validated end-to-end on testnet.
+  \item Led bootcamps (\textbf{30--80 participants}) and hackathons (\textbf{up to 500 participants}) as hands-on technical instructor, onboarding builder teams into Sui integration patterns.
 \end{itemize}
 
 \role{Tensorplex Labs}{Singapore}{Software Engineer, Full Stack}{May 2024--November 2025}
-\begin{itemize}[leftmargin=*,nosep]
-  \item Developed and shipped the frontend of \textbf{backprop.finance}, a Bittensor Alpha Trading Exchange that scaled from \textbf{5–8M to 50–60M USD in weekly transaction volume}, reaching \textbf{36\% of the network's volume}. Stack: Next.js, TailwindCSS, Node.js.
-  
-  \item Debugged and optimized backprop.finance frontend, using React hooks (startTransition, useDeferredValue, etc.) to prevent client blocking on our input intensive page with high amount of data displayed, React profiling tools to sieve out unnecessary re-renders, and flattening React component structures.
-
-  \item Designed and deployed a Google Analytics–driven feature usage tracking pipeline that identified 2 underused features \textbf{(0.1\% active user engagement)}. Insights from weekly dashboard reviews has enabled data-backed re-prioritization while guiding UX redesigns that increased high-impact feature adoption.
-  
-  \item Built a newsletter system powered by DeepSeek-V3, served through Python's FastAPI, summarizing the latest X (Twitter) posts weekly and generating an engaging title for the curated news. Saved \textbf{2–4h/week} in manual curation and achieved \textbf{23\% user engagement} via hover tracking and visibility.
-  
-  \item Built referral and leaderboard systems for a staking dApp, with \textbf{800+ unique wallet participants}, enhancing user engagement on discord \textbf{(21k members)} and retention incentives.
-  
-  \item Created an internal web-based LLM data labeling platform (FastAPI + NextJS) that streamlined prompt/output review through optimizing screen layout and keyboard navigation, increasing review speed from \textbf{>2minute} per task to under \textbf{30 seconds} per task.
-  
-  \item Reduced backend API latency for trading metrics from \textbf{15s to <0.5s} via a combination of in-memory caching (Redis), chunked processing, and response streamlining.
+\begin{itemize}
+  \item Developed and shipped the frontend of \textbf{backprop.finance}, a Bittensor trading exchange that scaled from \textbf{\$5--8M to \$50--60M weekly volume} (\textbf{36\% of network volume}).
+  \item Profiled and optimized backprop.finance's input-heavy UI using React concurrent APIs (startTransition, useDeferredValue), component flattening, and re-render elimination to resolve client blocking under high data throughput.
+  \item Actively monitored a \textbf{21k-member Discord} to surface pain points and feature requests; shipped referral and leaderboard systems (\textbf{800+ wallets}) and a GA-driven usage pipeline that flagged 2 features at \textbf{0.1\% engagement}, driving data-backed reprioritization and UX redesigns.
+  \item Built an LLM-powered newsletter (DeepSeek-V3 + FastAPI) summarizing weekly X posts, saving \textbf{2--4h/week} in manual curation at \textbf{23\% engagement}; created an internal LLM labeling platform (FastAPI + Next.js) cutting review time from \textbf{>2\,min to <30\,sec}.
+  \item Reduced trading-metrics API latency from \textbf{15s to <0.5s} via Redis caching, chunked processing, and response streamlining.
 \end{itemize}
 
-\role{Telepathy Labs}{Singapore}{DevOps Engineer}{November 2022--May 2024}
+\role{Telepathy Labs}{Singapore}{DevOps Engineer}{Nov 2022--May 2024}
 \begin{itemize}
-  \item Restructured the CI/CD pipeline to clarify versioning and Docker images and enable parallel develop-and-test workflows.
-  \item Automated tracking of service-owner branches, versions, and release dates so developers could stay focused on delivery.
+  \item Restructured CI/CD for parallel develop-and-test workflows; automated cross-team service versioning and release tracking.
 \end{itemize}
 
-\role{NCS}{Singapore}{Software Developer}{January 2021--November 2022}
+\role{NCS}{Singapore}{Software Developer}{Jan 2021--Nov 2022}
 \begin{itemize}
-  \item Prototyped and iterated a Low Code application to digitalize the onboarding and entry process into the Organization's physical office lobby.
-  \item Developed a document overdue module within an intelligent Document Processing application for Singapore's Attorney General Chamber, as part of solving and reducing human errors from missing important deadlines.
+  \item Built a document-overdue alerting module for Singapore's Attorney General Chamber and a digital lobby-onboarding app, reducing deadline-related errors and manual entry processing.
 \end{itemize}
 
 \section{EDUCATION}
@@ -113,7 +103,9 @@
 \section{SKILLS}
 
 \begin{itemize}
-  \item Blockchain indexing, Move Contracts, JS, NextJS, NodeJS, PostgreSQL, Prisma, React, Kafka, Docker, FastAPI, Python
+  \item \textbf{Systems \& Infra:} Rust, Kafka, PostgreSQL, Redis, RocksDB, Docker, gRPC, EBS/PVC, Prometheus
+  \item \textbf{Web \& App:} TypeScript, React, Next.js, Node.js, Prisma, FastAPI, Python
+  \item \textbf{Domain:} Blockchain indexing, Move smart contracts, high-throughput pipeline design, transactional outbox patterns
 \end{itemize}
 
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.19)  20 JUN 2026 07:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.19)  20 JUN 2026 07:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -347,17 +347,35 @@ Package microtype Info: No adjustment of character kerning.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 75.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 68.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [1
+)
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 76.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 76.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 76.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 76.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 76.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 76.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 76.
+ [1
 
-{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.119 \end{document}
-                     [2] (./raphael-fde.aux)
+{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}] (./raphael-fde.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -366,18 +384,18 @@ Package rerunfilecheck Info: File `raphael-fde.out' has not changed.
 (rerunfilecheck)             Checksum: 16B27507101EACC73A2CEA0E21393F30;322.
  ) 
 Here is how much of TeX's memory you used:
- 11874 strings out of 467525
- 186613 string characters out of 5418982
+ 11998 strings out of 467525
+ 189396 string characters out of 5418982
  666227 words of memory out of 5000000
- 40615 multiletter control sequences out of 15000+600000
- 657653 words of font info for 87 fonts, out of 8000000 for 9000
+ 40706 multiletter control sequences out of 15000+600000
+ 669836 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,5n,79p,1008b,575s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri10.pfb>
-Output written on raphael-fde.pdf (2 pages, 123039 bytes).
+ 75i,5n,79p,1008b,447s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
+Output written on raphael-fde.pdf (1 page, 128539 bytes).
 PDF statistics:
- 57 PDF objects out of 1000 (max. 8388607)
- 43 compressed objects within 1 object stream
+ 66 PDF objects out of 1000 (max. 8388607)
+ 49 compressed objects within 1 object stream
  5 named destinations out of 1000 (max. 500000)
- 18457 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 28697 words of extra memory for PDF output out of 29859 (max. 10000000)
 
