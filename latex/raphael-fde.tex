@@ -65,7 +65,7 @@
 
 \vspace{-0.35em}
 \begin{center}
-\textit{Solutions engineer and systems builder with 5+ years delivering production software. Technical POC for indexer architecture on a Korean Fortune 500 payment integration, partnering directly with customer engineering teams from requirements gathering through testnet validation. Experienced across backend infrastructure, product delivery, and developer-facing enablement, with a track record of turning ambiguous requirements into shipped systems.}
+\textit{Solutions engineer and systems builder with 5+ years delivering production software, partnering directly with customer engineering teams from requirements gathering to execution. Experienced across backend infrastructure, product delivery, and developer-facing enablement, with a track record of turning ambiguous requirements into shipped systems.}
 \end{center}
 
 \section{PROFESSIONAL EXPERIENCE}
@@ -73,14 +73,15 @@
 \role{Sui Foundation}{Singapore}{Solutions Engineer}{November 2025--Present}
 \begin{itemize}
   \item Embedded with a \textbf{Fortune 500} partner on a Sui-native payment integration as \textbf{technical POC for the indexer architecture} — led requirements gathering, presented architecture and benchmarks to partner stakeholders, and secured a greenlight in \textbf{under one week}; built and shipped the indexer alongside their engineers from design through testnet validation.
-  \item Architected and built a Rust deposit indexer (sui-indexer-alt-framework, gRPC) matching deposits against \textbf{75M wallet addresses} in a Kafka-sourced in-memory HashSet (\textbf{$\sim$27\,GB RAM}). Used a transactional outbox so deposit processing stayed fast even when downstream event publishing lagged. Benchmarked \textbf{500-key lookups at 7.3\,\textmu s} (1,400$\times$ under gate); cold-boot at \textbf{121K\,msg/s}.
-  \item Led bootcamps (\textbf{30--80 participants}) and hackathons (\textbf{up to 500 participants}) as hands-on technical instructor, onboarding builder teams into Sui integration patterns.
+  \item Architected and built a Rust deposit indexer (sui-indexer-alt-framework, gRPC) with a \textbf{75M-address} in-memory HashSet, resolving ~500 deposit lookups every Sui checkpoint. Used a transactional outbox so ingestion stayed fast if downstream event publishing lagged. Benchmarked \textbf{500-key lookups at 7.3\,\textmu s} against 7.5M addresses (1,400$\times$ under gate); cold-boot at \textbf{121K\,msg/s}.
+  \item Led bootcamps (\textbf{30--80 participants}) and co hosted hackathons (\textbf{up to 500 participants}) as hands-on technical instructor, onboarding builder teams into Sui integration patterns.
 \end{itemize}
 
 \role{Tensorplex Labs}{Singapore}{Software Engineer, Full Stack}{May 2024--November 2025}
 \begin{itemize}
   \item Owned end-to-end delivery for \textbf{backprop.finance}, a Bittensor trading exchange that scaled from \textbf{\$5--8M to \$50--60M weekly volume} (\textbf{36\% of network volume}) — continuous discovery via a \textbf{21k-member Discord} community, GA-driven usage analytics, and data-backed reprioritization (flagged 2 features at \textbf{0.1\% engagement}; shipped referral and leaderboard systems to \textbf{800+ wallets}).
   \item Built an internal LLM labeling platform (FastAPI + Next.js), cutting review time from \textbf{>2\,min to <30\,sec}. Shipped an LLM-powered newsletter (DeepSeek-V3 + FastAPI) saving \textbf{2--4h/week} at \textbf{23\% engagement}. Reduced live exchange trading-metrics API latency from \textbf{15s to <0.5s} via Redis caching and chunked processing.
+  \item Deployed a Google Analytics–driven feature usage tracking pipeline that identified 2 underused features \textbf{(0.1\% active user engagement)}. Insights from weekly dashboard reviews has enabled data-backed re-prioritization while guiding UX redesigns that increased high-impact feature adoption.
 \end{itemize}
 
 \role{Telepathy Labs}{Singapore}{DevOps Engineer}{November 2022--May 2024}
@@ -90,7 +91,8 @@
 
 \role{NCS}{Singapore}{Software Developer}{Jan 2021--Nov 2022}
 \begin{itemize}
-  \item Delivered client-facing systems for Singapore Attorney-General's Chambers — document-overdue alerting and digital lobby onboarding, reducing deadline errors and manual processing.
+  \item Prototyped and iterated a Low Code application to digitalize the onboarding and entry process into the Organization's physical office lobby.
+  \item Developed a document overdue module within an intelligent Document Processing application for Singapore's Attorney General Chamber, as part of solving and reducing human errors from missing important deadlines.
 \end{itemize}
 
 \section{EDUCATION}
@@ -102,8 +104,7 @@
 \begin{itemize}
   \item \textbf{Systems \& Infra:} Rust, Kafka, PostgreSQL, Redis, RocksDB, Docker, gRPC, EBS/PVC, Prometheus
   \item \textbf{Web \& App:} TypeScript, React, Next.js, Node.js, Prisma, FastAPI, Python
-  \item \textbf{Customer-facing:} Technical discovery, stakeholder presentations, POC ownership, workshop delivery
-  \item \textbf{Domain:} Blockchain indexing, Move smart contracts, high-throughput pipeline design, transactional outbox patterns
+  \item \textbf{Customer-facing:} Technical discovery, enterprise conversations, POC ownership, workshop delivery
 \end{itemize}
 
 \end{document}

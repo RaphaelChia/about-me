@@ -134,6 +134,7 @@ INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/ts1-lmr10.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/ts1-lmbx10.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/lm/ot1lmr.fd
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/lm/ot1lmr.fd
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/lm/ot1lmr.fd
@@ -156,7 +157,6 @@ INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/lm/omxlmex.fd
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/lm/omxlmex.fd
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/lm/omxlmex.fd
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/lmex10.tfm
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/ts1-lmbx10.tfm
 INPUT /usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
